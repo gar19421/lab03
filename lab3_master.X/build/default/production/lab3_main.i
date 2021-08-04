@@ -2795,27 +2795,41 @@ void __attribute__((picinterrupt(("")))) isr(void){
 
         if (RCREG != 0x0D){
         RC_temp = RCREG;
-            if(RC_temp==48){
+
+        switch(RC_temp){
+            case 48:
                 cont_temp = 0;
-            }else if(RC_temp==49){
+                break;
+            case 49:
                 cont_temp = 1;
-            }else if(RC_temp==50){
+                break;
+            case 50:
                 cont_temp = 2;
-            }else if(RC_temp==51){
+                break;
+            case 51:
                 cont_temp = 3;
-            }else if(RC_temp==52){
+                break;
+            case 52:
                 cont_temp = 4;
-            }else if(RC_temp==53){
+                break;
+            case 53:
                 cont_temp = 5;
-            }else if(RC_temp==54){
+                break;
+            case 54:
                 cont_temp = 6;
-            }else if(RC_temp==55){
+                break;
+            case 55:
                 cont_temp = 7;
-            }else if(RC_temp==56){
+                break;
+            case 56:
                 cont_temp = 8;
-            }else if(RC_temp==57){
+                break;
+            case 57:
                 cont_temp = 9;
-            }
+                break;
+        }
+
+
         if (u_flag == 1){
             contador = cont_temp;
             unidad = cont_temp;
