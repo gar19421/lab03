@@ -59,33 +59,34 @@
 //------------------------------------------------------------------------------
 //                          Variables
 //------------------------------------------------------------------------------
-uint8_t POT = 1;
-uint8_t POT1; //Para ADC
-uint8_t POT2;
-uint8_t var_temp; //Variable que recibe los datos del USART
+uint8_t pot = 1;
+uint8_t pot1; //Para ADC
+uint8_t pot2;
+uint8_t RC_temp; //Variable que recibe los datos del USART
   
-uint8_t contador=0; //Contador
-uint8_t cont_temp=0;
-uint8_t cont; //Contador TMR0
-
+uint8_t RC_temp;
 uint8_t u_flag = 1;
 uint8_t d_flag = 0;
 uint8_t c_flag = 0;
 uint8_t unidad = 0;
 uint8_t decena = 0;
 
-uint8_t display_unidad; //Para desplegar el valor de los potenciómetros con
-uint8_t display_decimal;//dos decimales
-uint8_t display_decimal_2;
-uint8_t display_unidad_s2;
-uint8_t display_decimal_s2;
-uint8_t display_decimal_2_s2;
+uint8_t contador=0; 
+uint8_t cont_temp=0;
+uint8_t cont; 
+
+uint8_t disp__unidad; //Para desplegar el valor de los potenciómetros con
+uint8_t disp__decimal;//dos decimales
+uint8_t disp__decimal_2;
+uint8_t disp__unidad_u2;
+uint8_t disp__decimal_u2;
+uint8_t disp__decimal2_u2;
 int8_t flag; //Bandera para saber que dato enviar por el USART
 //------------------------------------------------------------------------------
 //                          Prototipos
 //------------------------------------------------------------------------------
 void setup(void);  //Configuración
-uint8_t ascii_to_dec(uint8_t val); //Conversión ascii a decimal
+
 //------------------------------------------------------------------------------
 //                          Código Principal
 //------------------------------------------------------------------------------
@@ -95,14 +96,14 @@ void main(void) {
        PORTCbits.RC2 = 0;       //Slave Select
        __delay_ms(1);
        
-       spiWrite(POT);
-       if (POT == 1) {
-       POT2 = spiRead();
-       POT = 2;
+       spiWrite(pot);
+       if (pot == 1) {
+       pot2 = spiRead();
+       pot = 2;
        }
-       else if (POT == 2) {
-       POT1 = spiRead();
-       POT = 1;
+       else if (pot == 2) {
+       pot1 = spiRead();
+       pot = 1;
        }
        __delay_ms(1);
        PORTCbits.RC2 = 1;       //Slave Deselect       
@@ -114,19 +115,19 @@ void main(void) {
      }
      
     //Conversiones para el display del LCD para los 3 sensores
-    display_unidad = POT1 / 51;
-    display_decimal = ((POT1 * 100 / 51) - (display_unidad*100))/10;
-    display_decimal_2 = ((POT1 * 100 / 51) - (display_unidad*100) - (display_decimal*10));  
+    disp__unidad = pot1 / 51;
+    disp__decimal = ((pot1 * 100 / 51) - (disp__unidad*100))/10;
+    disp__decimal_2 = ((pot1 * 100 / 51) - (disp__unidad*100) - (disp__decimal*10));  
     
-    display_unidad_s2 = POT2 / 51;
-    display_decimal_s2 = (((POT2 * 100) / 51) - (display_unidad_s2*100))/10;
-    display_decimal_2_s2 = (((POT2 * 100) / 51) - (display_unidad_s2*100) - (display_decimal_s2*10));
+    disp__unidad_u2 = pot2 / 51;
+    disp__decimal_u2 = (((pot2 * 100) / 51) - (disp__unidad_u2*100))/10;
+    disp__decimal2_u2 = (((pot2 * 100) / 51) - (disp__unidad_u2*100) - (disp__decimal_u2*10));
 
     
-    if (PORTDbits.RD1 == 1){
+    if (PORTAbits.RA1 == 1){
         cont_temp = 0;
         contador = 0;
-        PORTD = 0;
+        PORTA = 0;
         u_flag = 1;
         d_flag = 0;
         c_flag = 0;
@@ -145,31 +146,33 @@ void __interrupt() isr(void){
     }
         
     if(PIR1bits.RCIF == 1){ //Empieza a recibir datos del USART
+        
         if (RCREG ==  0x0D){
-        PORTB = contador; 
-        PORTD =2;
+        PORTD = contador; 
+        PORTA =2;
         }
+        
         if (RCREG !=  0x0D){
-        var_temp = RCREG;
-            if(var_temp==48){
+        RC_temp = RCREG;
+            if(RC_temp==48){
                 cont_temp = 0;
-            }else if(var_temp==49){
+            }else if(RC_temp==49){
                 cont_temp = 1;
-            }else if(var_temp==50){
+            }else if(RC_temp==50){
                 cont_temp = 2;
-            }else if(var_temp==51){
+            }else if(RC_temp==51){
                 cont_temp = 3;
-            }else if(var_temp==52){
+            }else if(RC_temp==52){
                 cont_temp = 4;
-            }else if(var_temp==53){
+            }else if(RC_temp==53){
                 cont_temp = 5;
-            }else if(var_temp==54){
+            }else if(RC_temp==54){
                 cont_temp = 6;
-            }else if(var_temp==55){
+            }else if(RC_temp==55){
                 cont_temp = 7;
-            }else if(var_temp==56){
+            }else if(RC_temp==56){
                 cont_temp = 8;
-            }else if(var_temp==57){
+            }else if(RC_temp==57){
                 cont_temp = 9;
             }
         if (u_flag == 1){
@@ -191,34 +194,36 @@ void __interrupt() isr(void){
         }     
         }}
     
+        
+    //recibir datos del pot
     if (TXIF == 1){
         if (flag == 0){//Envía los datos al USART de los dos potenciómetros
-            TXREG = display_unidad + 48; //Envía las unidades del POT1
+            TXREG = disp__unidad + 48; //Envía las unidades del POT1
             flag = 1;
         } else if (flag == 1){
             TXREG = 0x2E;
             flag = 2;
         } else if (flag == 2){
-            TXREG = display_decimal + 48; //Envía el primer decimal del POT1
+            TXREG = disp__decimal + 48; //Envía el primer decimal del POT1
             flag = 3;
         } else if (flag == 3){
-            TXREG = display_decimal_2 + 48; //Envía el segundo decimal del POT1
+            TXREG = disp__decimal_2 + 48; //Envía el segundo decimal del POT1
             flag = 4;
         } else if (flag == 4){
             TXREG = 0x2D;
             flag = 5;
         }
         else if (flag == 5){
-            TXREG = display_unidad_s2 + 48;//Envía las unidades del POT2
+            TXREG = disp__unidad_u2 + 48;//Envía las unidades del POT2
             flag = 6;
         } else if (flag == 6){
             TXREG = 0x2E;
             flag = 7;
         } else if (flag == 7){
-            TXREG = display_decimal_s2 + 48; //Envía el primer decimal del POT2
+            TXREG = disp__decimal_u2 + 48; //Envía el primer decimal del POT2
             flag = 8;
         } else if (flag == 8){
-            TXREG = display_decimal_2_s2 + 48; //Envía el segundo decimal del POT2
+            TXREG = disp__decimal2_u2 + 48; //Envía el segundo decimal del POT2
             flag = 9;
         } else if (flag == 9){
             TXREG = 0x0D;
@@ -228,30 +233,7 @@ void __interrupt() isr(void){
     }   
 }
 
-uint8_t ascii_to_dec(uint8_t val){
-    if(val==48){
-        return 0;
-    }else if(val==49){
-        return 1;
-    }else if(val==50){
-        return 2;
-    }else if(val==51){
-        return 3;
-    }else if(val==52){
-        return 4;
-    }else if(val==53){
-        return 5;
-    }else if(val==54){
-        return 6;
-    }else if(val==55){
-        return 7;
-    }else if(val==56){
-        return 8;
-    }else if(val==57){
-        return 9;
-    }
 
-}
 //------------------------------------------------------------------------------
 //                          Configuración
 //------------------------------------------------------------------------------

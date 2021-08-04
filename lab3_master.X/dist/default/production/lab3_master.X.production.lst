@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.31 build 20201012212115 
-                                                                                               Tue Aug 03 15:05:41 2021
+                                                                                               Tue Aug 03 19:14:11 2021
 
 Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1 
      1                           	processor	16F887
@@ -390,7 +390,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    376                           ;initializer for _u_flag
    377  04A3  3401               	retlw	1
    378                           
-   379                           ;initializer for _POT
+   379                           ;initializer for _pot
    380  04A4  3401               	retlw	1
    381  0013                     _SSPBUF	set	19
    382  0014                     _SSPCON	set	20
@@ -398,14 +398,14 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    384  0018                     _RCSTAbits	set	24
    385  0009                     _PORTE	set	9
    386  0007                     _PORTC	set	7
-   387  0005                     _PORTA	set	5
+   387  0006                     _PORTB	set	6
    388  0019                     _TXREG	set	25
-   389  0006                     _PORTB	set	6
+   389  0008                     _PORTD	set	8
    390  001A                     _RCREG	set	26
    391  000C                     _PIR1bits	set	12
    392  000B                     _INTCONbits	set	11
-   393  0008                     _PORTD	set	8
-   394  0008                     _PORTDbits	set	8
+   393  0005                     _PORTA	set	5
+   394  0005                     _PORTAbits	set	5
    395  0007                     _PORTCbits	set	7
    396  0064                     _TXIF	set	100
    397  0094                     _SSPSTATbits	set	148
@@ -471,47 +471,47 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    457  007A                     __pbssCOMMON:
    458  007A                     _flag:
    459  007A                     	ds	1
-   460  007B                     _unidad:
+   460  007B                     _cont_temp:
    461  007B                     	ds	1
-   462  007C                     _cont_temp:
+   462  007C                     _unidad:
    463  007C                     	ds	1
-   464  007D                     _var_temp:
+   464  007D                     _RC_temp:
    465  007D                     	ds	1
    466                           
    467                           	psect	bssBANK0
    468  0039                     __pbssBANK0:
-   469  0039                     _display_decimal_2_s2:
+   469  0039                     _disp__decimal2_u2:
    470  0039                     	ds	1
-   471  003A                     _display_decimal_s2:
+   471  003A                     _disp__decimal_u2:
    472  003A                     	ds	1
-   473  003B                     _display_unidad_s2:
+   473  003B                     _disp__unidad_u2:
    474  003B                     	ds	1
-   475  003C                     _display_decimal_2:
+   475  003C                     _disp__decimal_2:
    476  003C                     	ds	1
-   477  003D                     _display_decimal:
+   477  003D                     _disp__decimal:
    478  003D                     	ds	1
-   479  003E                     _display_unidad:
+   479  003E                     _disp__unidad:
    480  003E                     	ds	1
-   481  003F                     _decena:
+   481  003F                     _cont:
    482  003F                     	ds	1
-   483  0040                     _c_flag:
+   483  0040                     _contador:
    484  0040                     	ds	1
-   485  0041                     _d_flag:
+   485  0041                     _decena:
    486  0041                     	ds	1
-   487  0042                     _cont:
+   487  0042                     _c_flag:
    488  0042                     	ds	1
-   489  0043                     _contador:
+   489  0043                     _d_flag:
    490  0043                     	ds	1
-   491  0044                     _POT2:
+   491  0044                     _pot2:
    492  0044                     	ds	1
-   493  0045                     _POT1:
+   493  0045                     _pot1:
    494  0045                     	ds	1
    495                           
    496                           	psect	dataBANK0
    497  0046                     __pdataBANK0:
    498  0046                     _u_flag:
    499  0046                     	ds	1
-   500  0047                     _POT:
+   500  0047                     _pot:
    501  0047                     	ds	1
    502                           
    503                           	psect	cstackCOMMON
@@ -659,7 +659,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    645                           
    646                           ; 1 bytes @ 0xF
    647  002F                     	ds	8
-   648  0037                     _main$1215:
+   648  0037                     _main$1211:
    649                           
    650                           ; 2 bytes @ 0x17
    651  0037                     	ds	2
@@ -671,7 +671,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    657 ;;
    658 ;; *************** function _main *****************
    659 ;; Defined at:
-   660 ;;		line 92 in file "lab3_main.c"
+   660 ;;		line 93 in file "lab3_main.c"
    661 ;; Parameters:    Size  Location     Type
    662 ;;		None
    663 ;; Auto vars:     Size  Location     Type
@@ -706,117 +706,117 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    692                           
    693                           ;psect for function _main
    694  0030                     _main:
-   695  0030                     l1431:	
+   695  0030                     l1353:	
    696                           ;incstack = 0
    697                           ; Regs used in _main: [wreg+status,2+status,0+pclath+cstack]
    698                           
    699                           
-   700                           ;lab3_main.c: 93:         }
+   700                           ;lab3_main.c: 94:         PORTA =2;
    701  0030  120A  118A  23D3  120A  118A  	fcall	_setup
-   702  0035                     l1433:
+   702  0035                     l1355:
    703                           
-   704                           ;lab3_main.c: 95:         var_temp = RCREG;
+   704                           ;lab3_main.c: 96: 
    705  0035  1283               	bcf	3,5	;RP0=0, select bank0
    706  0036  1303               	bcf	3,6	;RP1=0, select bank0
    707  0037  1107               	bcf	7,2	;volatile
-   708  0038                     l1435:
+   708  0038                     l1357:
    709                           
-   710                           ;lab3_main.c: 96:             if(var_temp==48){
+   710                           ;lab3_main.c: 97:         if (RCREG != 0x0D){
    711  0038  3003               	movlw	3
    712  0039  1283               	bcf	3,5	;RP0=0, select bank0
    713  003A  1303               	bcf	3,6	;RP1=0, select bank0
    714  003B  00B0               	movwf	??_main+1
    715  003C  3097               	movlw	151
    716  003D  00AF               	movwf	??_main
-   717  003E                     u1157:
+   717  003E                     u1057:
    718  003E  0BAF               	decfsz	??_main,f
-   719  003F  283E               	goto	u1157
+   719  003F  283E               	goto	u1057
    720  0040  0BB0               	decfsz	??_main+1,f
-   721  0041  283E               	goto	u1157
-   722  0042                     l1437:
+   721  0041  283E               	goto	u1057
+   722  0042                     l1359:
    723                           
-   724                           ;lab3_main.c: 98:             }else if(var_temp==49){
+   724                           ;lab3_main.c: 99:             if(RC_temp==48){
    725  0042  1283               	bcf	3,5	;RP0=0, select bank0
    726  0043  1303               	bcf	3,6	;RP1=0, select bank0
-   727  0044  0847               	movf	_POT,w
+   727  0044  0847               	movf	_pot,w
    728  0045  120A  118A  249D  120A  118A  	fcall	_spiWrite
-   729  004A                     l1439:
+   729  004A                     l1361:
    730                           
-   731                           ;lab3_main.c: 99:                 cont_temp = 1;
+   731                           ;lab3_main.c: 100:                 cont_temp = 0;
    732  004A  1283               	bcf	3,5	;RP0=0, select bank0
    733  004B  1303               	bcf	3,6	;RP1=0, select bank0
-   734  004C  0347               	decf	_POT,w
+   734  004C  0347               	decf	_pot,w
    735  004D  1D03               	btfss	3,2
-   736  004E  2850               	goto	u831
-   737  004F  2851               	goto	u830
-   738  0050                     u831:
-   739  0050  2860               	goto	l1445
-   740  0051                     u830:
-   741  0051                     l1441:
+   736  004E  2850               	goto	u731
+   737  004F  2851               	goto	u730
+   738  0050                     u731:
+   739  0050  2860               	goto	l1367
+   740  0051                     u730:
+   741  0051                     l1363:
    742                           
-   743                           ;lab3_main.c: 100:             }else if(var_temp==50){
+   743                           ;lab3_main.c: 101:             }else if(RC_temp==49){
    744  0051  120A  118A  248D  120A  118A  	fcall	_spiRead
    745  0056  1283               	bcf	3,5	;RP0=0, select bank0
    746  0057  1303               	bcf	3,6	;RP1=0, select bank0
    747  0058  00AF               	movwf	??_main
    748  0059  082F               	movf	??_main,w
-   749  005A  00C4               	movwf	_POT2
-   750  005B                     l1443:
+   749  005A  00C4               	movwf	_pot2
+   750  005B                     l1365:
    751                           
-   752                           ;lab3_main.c: 101:                 cont_temp = 2;
+   752                           ;lab3_main.c: 102:                 cont_temp = 1;
    753  005B  3002               	movlw	2
    754  005C  00AF               	movwf	??_main
    755  005D  082F               	movf	??_main,w
-   756  005E  00C7               	movwf	_POT
+   756  005E  00C7               	movwf	_pot
    757                           
-   758                           ;lab3_main.c: 102:             }else if(var_temp==51){
-   759  005F  2872               	goto	l1451
-   760  0060                     l1445:
+   758                           ;lab3_main.c: 103:             }else if(RC_temp==50){
+   759  005F  2872               	goto	l1373
+   760  0060                     l1367:
    761  0060  3002               	movlw	2
-   762  0061  0647               	xorwf	_POT,w
+   762  0061  0647               	xorwf	_pot,w
    763  0062  1D03               	btfss	3,2
-   764  0063  2865               	goto	u841
-   765  0064  2866               	goto	u840
-   766  0065                     u841:
-   767  0065  2872               	goto	l1451
-   768  0066                     u840:
-   769  0066                     l1447:
+   764  0063  2865               	goto	u741
+   765  0064  2866               	goto	u740
+   766  0065                     u741:
+   767  0065  2872               	goto	l1373
+   768  0066                     u740:
+   769  0066                     l1369:
    770                           
-   771                           ;lab3_main.c: 104:             }else if(var_temp==52){
+   771                           ;lab3_main.c: 105:             }else if(RC_temp==51){
    772  0066  120A  118A  248D  120A  118A  	fcall	_spiRead
    773  006B  1283               	bcf	3,5	;RP0=0, select bank0
    774  006C  1303               	bcf	3,6	;RP1=0, select bank0
    775  006D  00AF               	movwf	??_main
    776  006E  082F               	movf	??_main,w
-   777  006F  00C5               	movwf	_POT1
-   778  0070                     l1449:
+   777  006F  00C5               	movwf	_pot1
+   778  0070                     l1371:
    779                           
-   780                           ;lab3_main.c: 105:                 cont_temp = 4;
-   781  0070  01C7               	clrf	_POT
-   782  0071  0AC7               	incf	_POT,f
-   783  0072                     l1451:
+   780                           ;lab3_main.c: 106:                 cont_temp = 3;
+   781  0070  01C7               	clrf	_pot
+   782  0071  0AC7               	incf	_pot,f
+   783  0072                     l1373:
    784                           
-   785                           ;lab3_main.c: 107:                 cont_temp = 5;
+   785                           ;lab3_main.c: 108:                 cont_temp = 4;
    786  0072  3003               	movlw	3
    787  0073  1283               	bcf	3,5	;RP0=0, select bank0
    788  0074  1303               	bcf	3,6	;RP1=0, select bank0
    789  0075  00B0               	movwf	??_main+1
    790  0076  3097               	movlw	151
    791  0077  00AF               	movwf	??_main
-   792  0078                     u1167:
+   792  0078                     u1067:
    793  0078  0BAF               	decfsz	??_main,f
-   794  0079  2878               	goto	u1167
+   794  0079  2878               	goto	u1067
    795  007A  0BB0               	decfsz	??_main+1,f
-   796  007B  2878               	goto	u1167
-   797  007C                     l1453:
+   796  007B  2878               	goto	u1067
+   797  007C                     l1375:
    798                           
-   799                           ;lab3_main.c: 108:             }else if(var_temp==54){
+   799                           ;lab3_main.c: 109:             }else if(RC_temp==53){
    800  007C  1283               	bcf	3,5	;RP0=0, select bank0
    801  007D  1303               	bcf	3,6	;RP1=0, select bank0
    802  007E  1507               	bsf	7,2	;volatile
-   803  007F                     l1455:
+   803  007F                     l1377:
    804                           
-   805                           ;lab3_main.c: 109:                 cont_temp = 6;
+   805                           ;lab3_main.c: 110:                 cont_temp = 5;
    806  007F  3003               	movlw	3
    807  0080  1283               	bcf	3,5	;RP0=0, select bank0
    808  0081  1303               	bcf	3,6	;RP1=0, select bank0
@@ -825,45 +825,45 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    811  0084  00B0               	movwf	??_main+1
    812  0085  3055               	movlw	85
    813  0086  00AF               	movwf	??_main
-   814  0087                     u1177:
+   814  0087                     u1077:
    815  0087  0BAF               	decfsz	??_main,f
-   816  0088  2887               	goto	u1177
+   816  0088  2887               	goto	u1077
    817  0089  0BB0               	decfsz	??_main+1,f
-   818  008A  2887               	goto	u1177
+   818  008A  2887               	goto	u1077
    819  008B  0BB1               	decfsz	??_main+2,f
-   820  008C  2887               	goto	u1177
-   821  008D                     l1457:
+   820  008C  2887               	goto	u1077
+   821  008D                     l1379:
    822                           
-   823                           ;lab3_main.c: 111:                 cont_temp = 7;
+   823                           ;lab3_main.c: 112:                 cont_temp = 6;
    824  008D  3010               	movlw	16
    825  008E  1283               	bcf	3,5	;RP0=0, select bank0
    826  008F  1303               	bcf	3,6	;RP1=0, select bank0
-   827  0090  0242               	subwf	_cont,w
+   827  0090  023F               	subwf	_cont,w
    828  0091  1C03               	skipc
-   829  0092  2894               	goto	u851
-   830  0093  2895               	goto	u850
-   831  0094                     u851:
-   832  0094  2899               	goto	l1463
-   833  0095                     u850:
-   834  0095                     l1459:
+   829  0092  2894               	goto	u751
+   830  0093  2895               	goto	u750
+   831  0094                     u751:
+   832  0094  2899               	goto	l1385
+   833  0095                     u750:
+   834  0095                     l1381:
    835                           
-   836                           ;lab3_main.c: 112:             }else if(var_temp==56){
-   837  0095  01C2               	clrf	_cont
-   838  0096                     l1461:
+   836                           ;lab3_main.c: 113:             }else if(RC_temp==55){
+   837  0095  01BF               	clrf	_cont
+   838  0096                     l1383:
    839                           
-   840                           ;lab3_main.c: 113:                 cont_temp = 8;
+   840                           ;lab3_main.c: 114:                 cont_temp = 7;
    841  0096  1683               	bsf	3,5	;RP0=1, select bank1
    842  0097  1303               	bcf	3,6	;RP1=0, select bank1
    843  0098  160C               	bsf	12,4	;volatile
-   844  0099                     l1463:
+   844  0099                     l1385:
    845                           
-   846                           ;lab3_main.c: 117:         if (u_flag == 1){
+   846                           ;lab3_main.c: 118:                 cont_temp = 9;
    847  0099  3033               	movlw	51
    848  009A  1283               	bcf	3,5	;RP0=0, select bank0
    849  009B  00A6               	movwf	___awdiv@divisor
    850  009C  3000               	movlw	0
    851  009D  00A7               	movwf	___awdiv@divisor+1
-   852  009E  0845               	movf	_POT1,w
+   852  009E  0845               	movf	_pot1,w
    853  009F  00AF               	movwf	??_main
    854  00A0  01B0               	clrf	??_main+1
    855  00A1  082F               	movf	??_main,w
@@ -876,15 +876,15 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    862  00AC  0826               	movf	?___awdiv,w
    863  00AD  00B1               	movwf	??_main+2
    864  00AE  0831               	movf	??_main+2,w
-   865  00AF  00BE               	movwf	_display_unidad
-   866  00B0                     l1465:
+   865  00AF  00BE               	movwf	_disp__unidad
+   866  00B0                     l1387:
    867                           
-   868                           ;lab3_main.c: 118:             contador = cont_temp;
+   868                           ;lab3_main.c: 119:             }
    869  00B0  3033               	movlw	51
    870  00B1  00A6               	movwf	___awdiv@divisor
    871  00B2  3000               	movlw	0
    872  00B3  00A7               	movwf	___awdiv@divisor+1
-   873  00B4  0845               	movf	_POT1,w
+   873  00B4  0845               	movf	_pot1,w
    874  00B5  00AF               	movwf	??_main
    875  00B6  01B0               	clrf	??_main+1
    876  00B7  082F               	movf	??_main,w
@@ -909,7 +909,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    895  00D2  00B1               	movwf	??_main+2
    896  00D3  0827               	movf	?___awdiv+1,w
    897  00D4  00B2               	movwf	??_main+3
-   898  00D5  083E               	movf	_display_unidad,w
+   898  00D5  083E               	movf	_disp__unidad,w
    899  00D6  00B3               	movwf	??_main+4
    900  00D7  01B4               	clrf	??_main+5
    901  00D8  0833               	movf	??_main+4,w
@@ -925,22 +925,22 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    911  00E6  1303               	bcf	3,6	;RP1=0, select bank0
    912  00E7  0820               	movf	?___wmul,w
    913  00E8  0731               	addwf	??_main+2,w
-   914  00E9  00B7               	movwf	_main$1215
+   914  00E9  00B7               	movwf	_main$1211
    915  00EA  0821               	movf	?___wmul+1,w
    916  00EB  1803               	skipnc
    917  00EC  0A21               	incf	?___wmul+1,w
    918  00ED  0732               	addwf	??_main+3,w
-   919  00EE  00B8               	movwf	_main$1215+1
-   920  00EF                     l1467:
+   919  00EE  00B8               	movwf	_main$1211+1
+   920  00EF                     l1389:
    921                           
-   922                           ;lab3_main.c: 118:             contador = cont_temp;
+   922                           ;lab3_main.c: 119:             }
    923  00EF  300A               	movlw	10
    924  00F0  00A6               	movwf	___awdiv@divisor
    925  00F1  3000               	movlw	0
    926  00F2  00A7               	movwf	___awdiv@divisor+1
-   927  00F3  0838               	movf	_main$1215+1,w
+   927  00F3  0838               	movf	_main$1211+1,w
    928  00F4  00A9               	movwf	___awdiv@dividend+1
-   929  00F5  0837               	movf	_main$1215,w
+   929  00F5  0837               	movf	_main$1211,w
    930  00F6  00A8               	movwf	___awdiv@dividend
    931  00F7  120A  118A  236A  120A  118A  	fcall	___awdiv
    932  00FC  1283               	bcf	3,5	;RP0=0, select bank0
@@ -948,15 +948,15 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    934  00FE  0826               	movf	?___awdiv,w
    935  00FF  00AF               	movwf	??_main
    936  0100  082F               	movf	??_main,w
-   937  0101  00BD               	movwf	_display_decimal
-   938  0102                     l1469:
+   937  0101  00BD               	movwf	_disp__decimal
+   938  0102                     l1391:
    939                           
-   940                           ;lab3_main.c: 119:             unidad = cont_temp;
+   940                           ;lab3_main.c: 120:         if (u_flag == 1){
    941  0102  3033               	movlw	51
    942  0103  00A6               	movwf	___awdiv@divisor
    943  0104  3000               	movlw	0
    944  0105  00A7               	movwf	___awdiv@divisor+1
-   945  0106  0845               	movf	_POT1,w
+   945  0106  0845               	movf	_pot1,w
    946  0107  00AF               	movwf	??_main
    947  0108  01B0               	clrf	??_main+1
    948  0109  082F               	movf	??_main,w
@@ -985,7 +985,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    971  0128  00B3               	movwf	??_main+4
    972  0129  0833               	movf	??_main+4,w
    973  012A  00A0               	movwf	___bmul@multiplicand
-   974  012B  083E               	movf	_display_unidad,w
+   974  012B  083E               	movf	_disp__unidad,w
    975  012C  120A  118A  2461  120A  118A  	fcall	___bmul
    976  0131  1283               	bcf	3,5	;RP0=0, select bank0
    977  0132  1303               	bcf	3,6	;RP1=0, select bank0
@@ -994,7 +994,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    980  0135  00B5               	movwf	??_main+6
    981  0136  0835               	movf	??_main+6,w
    982  0137  00A0               	movwf	___bmul@multiplicand
-   983  0138  083D               	movf	_display_decimal,w
+   983  0138  083D               	movf	_disp__decimal,w
    984  0139  120A  118A  2461  120A  118A  	fcall	___bmul
    985  013E  1283               	bcf	3,5	;RP0=0, select bank0
    986  013F  1303               	bcf	3,6	;RP1=0, select bank0
@@ -1002,15 +1002,15 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    988  0141  0731               	addwf	??_main+2,w
    989  0142  00B6               	movwf	??_main+7
    990  0143  0836               	movf	??_main+7,w
-   991  0144  00BC               	movwf	_display_decimal_2
-   992  0145                     l1471:
+   991  0144  00BC               	movwf	_disp__decimal_2
+   992  0145                     l1393:
    993                           
-   994                           ;lab3_main.c: 121:             d_flag = 1;
+   994                           ;lab3_main.c: 122:             unidad = cont_temp;
    995  0145  3033               	movlw	51
    996  0146  00A6               	movwf	___awdiv@divisor
    997  0147  3000               	movlw	0
    998  0148  00A7               	movwf	___awdiv@divisor+1
-   999  0149  0844               	movf	_POT2,w
+   999  0149  0844               	movf	_pot2,w
   1000  014A  00AF               	movwf	??_main
   1001  014B  01B0               	clrf	??_main+1
   1002  014C  082F               	movf	??_main,w
@@ -1023,15 +1023,15 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1009  0157  0826               	movf	?___awdiv,w
   1010  0158  00B1               	movwf	??_main+2
   1011  0159  0831               	movf	??_main+2,w
-  1012  015A  00BB               	movwf	_display_unidad_s2
-  1013  015B                     l1473:
+  1012  015A  00BB               	movwf	_disp__unidad_u2
+  1013  015B                     l1395:
   1014                           
-  1015                           ;lab3_main.c: 122:         }
+  1015                           ;lab3_main.c: 123:             u_flag = 0;
   1016  015B  3033               	movlw	51
   1017  015C  00A6               	movwf	___awdiv@divisor
   1018  015D  3000               	movlw	0
   1019  015E  00A7               	movwf	___awdiv@divisor+1
-  1020  015F  0844               	movf	_POT2,w
+  1020  015F  0844               	movf	_pot2,w
   1021  0160  00AF               	movwf	??_main
   1022  0161  01B0               	clrf	??_main+1
   1023  0162  082F               	movf	??_main,w
@@ -1056,7 +1056,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1042  017D  00B1               	movwf	??_main+2
   1043  017E  0827               	movf	?___awdiv+1,w
   1044  017F  00B2               	movwf	??_main+3
-  1045  0180  083B               	movf	_display_unidad_s2,w
+  1045  0180  083B               	movf	_disp__unidad_u2,w
   1046  0181  00B3               	movwf	??_main+4
   1047  0182  01B4               	clrf	??_main+5
   1048  0183  0833               	movf	??_main+4,w
@@ -1072,22 +1072,22 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1058  0191  1303               	bcf	3,6	;RP1=0, select bank0
   1059  0192  0820               	movf	?___wmul,w
   1060  0193  0731               	addwf	??_main+2,w
-  1061  0194  00B7               	movwf	_main$1215
+  1061  0194  00B7               	movwf	_main$1211
   1062  0195  0821               	movf	?___wmul+1,w
   1063  0196  1803               	skipnc
   1064  0197  0A21               	incf	?___wmul+1,w
   1065  0198  0732               	addwf	??_main+3,w
-  1066  0199  00B8               	movwf	_main$1215+1
-  1067  019A                     l1475:
+  1066  0199  00B8               	movwf	_main$1211+1
+  1067  019A                     l1397:
   1068                           
-  1069                           ;lab3_main.c: 122:         }
+  1069                           ;lab3_main.c: 123:             u_flag = 0;
   1070  019A  300A               	movlw	10
   1071  019B  00A6               	movwf	___awdiv@divisor
   1072  019C  3000               	movlw	0
   1073  019D  00A7               	movwf	___awdiv@divisor+1
-  1074  019E  0838               	movf	_main$1215+1,w
+  1074  019E  0838               	movf	_main$1211+1,w
   1075  019F  00A9               	movwf	___awdiv@dividend+1
-  1076  01A0  0837               	movf	_main$1215,w
+  1076  01A0  0837               	movf	_main$1211,w
   1077  01A1  00A8               	movwf	___awdiv@dividend
   1078  01A2  120A  118A  236A  120A  118A  	fcall	___awdiv
   1079  01A7  1283               	bcf	3,5	;RP0=0, select bank0
@@ -1095,15 +1095,15 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1081  01A9  0826               	movf	?___awdiv,w
   1082  01AA  00AF               	movwf	??_main
   1083  01AB  082F               	movf	??_main,w
-  1084  01AC  00BA               	movwf	_display_decimal_s2
-  1085  01AD                     l1477:
+  1084  01AC  00BA               	movwf	_disp__decimal_u2
+  1085  01AD                     l1399:
   1086                           
-  1087                           ;lab3_main.c: 123:         else if (d_flag == 1){
+  1087                           ;lab3_main.c: 124:             d_flag = 1;
   1088  01AD  3033               	movlw	51
   1089  01AE  00A6               	movwf	___awdiv@divisor
   1090  01AF  3000               	movlw	0
   1091  01B0  00A7               	movwf	___awdiv@divisor+1
-  1092  01B1  0844               	movf	_POT2,w
+  1092  01B1  0844               	movf	_pot2,w
   1093  01B2  00AF               	movwf	??_main
   1094  01B3  01B0               	clrf	??_main+1
   1095  01B4  082F               	movf	??_main,w
@@ -1132,7 +1132,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1118  01D3  00B3               	movwf	??_main+4
   1119  01D4  0833               	movf	??_main+4,w
   1120  01D5  00A0               	movwf	___bmul@multiplicand
-  1121  01D6  083B               	movf	_display_unidad_s2,w
+  1121  01D6  083B               	movf	_disp__unidad_u2,w
   1122  01D7  120A  118A  2461  120A  118A  	fcall	___bmul
   1123  01DC  1283               	bcf	3,5	;RP0=0, select bank0
   1124  01DD  1303               	bcf	3,6	;RP1=0, select bank0
@@ -1141,7 +1141,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1127  01E0  00B5               	movwf	??_main+6
   1128  01E1  0835               	movf	??_main+6,w
   1129  01E2  00A0               	movwf	___bmul@multiplicand
-  1130  01E3  083A               	movf	_display_decimal_s2,w
+  1130  01E3  083A               	movf	_disp__decimal_u2,w
   1131  01E4  120A  118A  2461  120A  118A  	fcall	___bmul
   1132  01E9  1283               	bcf	3,5	;RP0=0, select bank0
   1133  01EA  1303               	bcf	3,6	;RP1=0, select bank0
@@ -1149,38 +1149,38 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1135  01EC  0731               	addwf	??_main+2,w
   1136  01ED  00B6               	movwf	??_main+7
   1137  01EE  0836               	movf	??_main+7,w
-  1138  01EF  00B9               	movwf	_display_decimal_2_s2
-  1139  01F0                     l1479:
+  1138  01EF  00B9               	movwf	_disp__decimal2_u2
+  1139  01F0                     l1401:
   1140                           
-  1141                           ;lab3_main.c: 126:             d_flag = 0;
-  1142  01F0  1C88               	btfss	8,1	;volatile
-  1143  01F1  29F3               	goto	u861
-  1144  01F2  29F4               	goto	u860
-  1145  01F3                     u861:
-  1146  01F3  2835               	goto	l1433
-  1147  01F4                     u860:
-  1148  01F4                     l1481:
+  1141                           ;lab3_main.c: 127:             contador = (unidad*10)+cont_temp;
+  1142  01F0  1C85               	btfss	5,1	;volatile
+  1143  01F1  29F3               	goto	u761
+  1144  01F2  29F4               	goto	u760
+  1145  01F3                     u761:
+  1146  01F3  2835               	goto	l1355
+  1147  01F4                     u760:
+  1148  01F4                     l1403:
   1149                           
-  1150                           ;lab3_main.c: 127:             c_flag = 1;
-  1151  01F4  01FC               	clrf	_cont_temp
+  1150                           ;lab3_main.c: 128:             decena = cont_temp;
+  1151  01F4  01FB               	clrf	_cont_temp
   1152                           
-  1153                           ;lab3_main.c: 128:         }
-  1154  01F5  01C3               	clrf	_contador
+  1153                           ;lab3_main.c: 129:             d_flag = 0;
+  1154  01F5  01C0               	clrf	_contador
   1155                           
-  1156                           ;lab3_main.c: 129:         else if (c_flag == 1){
-  1157  01F6  0188               	clrf	8	;volatile
-  1158  01F7                     l1483:
+  1156                           ;lab3_main.c: 130:             c_flag = 1;
+  1157  01F6  0185               	clrf	5	;volatile
+  1158  01F7                     l1405:
   1159                           
-  1160                           ;lab3_main.c: 130:             contador = (unidad*100)+(decena*10)+cont_temp;
+  1160                           ;lab3_main.c: 131:         }
   1161  01F7  01C6               	clrf	_u_flag
   1162  01F8  0AC6               	incf	_u_flag,f
   1163                           
-  1164                           ;lab3_main.c: 131:             d_flag = 0;
-  1165  01F9  01C1               	clrf	_d_flag
+  1164                           ;lab3_main.c: 132:         else if (c_flag == 1){
+  1165  01F9  01C3               	clrf	_d_flag
   1166                           
-  1167                           ;lab3_main.c: 132:             c_flag = 1;
-  1168  01FA  01C0               	clrf	_c_flag
-  1169  01FB  2835               	goto	l1433
+  1167                           ;lab3_main.c: 133:             contador = (unidad*100)+(decena*10)+cont_temp;
+  1168  01FA  01C2               	clrf	_c_flag
+  1169  01FB  2835               	goto	l1355
   1170  01FC  120A  118A  280C   	ljmp	start
   1171  01FF                     __end_of_main:
   1172                           
@@ -1226,12 +1226,12 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1212  049D  1283               	bcf	3,5	;RP0=0, select bank0
   1213  049E  1303               	bcf	3,6	;RP1=0, select bank0
   1214  049F  00A0               	movwf	spiWrite@dat
-  1215  04A0                     l1337:
+  1215  04A0                     l1259:
   1216                           
   1217                           ;SPI.c: 34: void spiWrite(char dat);SPI.c: 35: {;SPI.c: 36:     SSPBUF = dat;
   1218  04A0  0820               	movf	spiWrite@dat,w
   1219  04A1  0093               	movwf	19	;volatile
-  1220  04A2                     l223:
+  1220  04A2                     l203:
   1221  04A2  0008               	return
   1222  04A3                     __end_of_spiWrite:
   1223                           
@@ -1270,20 +1270,20 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1256                           
   1257                           ;psect for function _spiRead
   1258  048D                     _spiRead:
-  1259  048D                     l1339:	
+  1259  048D                     l1261:	
   1260                           ;incstack = 0
   1261                           ; Regs used in _spiRead: [wreg+status,2+status,0+pclath+cstack]
   1262                           
   1263                           
   1264                           ;SPI.c: 41:     spiReceiveWait();
   1265  048D  120A  118A  2496  120A  118A  	fcall	_spiReceiveWait
-  1266  0492                     l1341:
+  1266  0492                     l1263:
   1267                           
   1268                           ;SPI.c: 42:     return(SSPBUF);
   1269  0492  1283               	bcf	3,5	;RP0=0, select bank0
   1270  0493  1303               	bcf	3,6	;RP1=0, select bank0
   1271  0494  0813               	movf	19,w	;volatile
-  1272  0495                     l226:
+  1272  0495                     l206:
   1273  0495  0008               	return
   1274  0496                     __end_of_spiRead:
   1275                           
@@ -1322,22 +1322,22 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1308                           
   1309                           ;psect for function _spiReceiveWait
   1310  0496                     _spiReceiveWait:
-  1311  0496                     l1275:	
+  1311  0496                     l1197:	
   1312                           ;incstack = 0
   1313                           ; Regs used in _spiReceiveWait: []
   1314                           
-  1315  0496                     l217:	
+  1315  0496                     l197:	
   1316                           ;SPI.c: 31:     while ( !SSPSTATbits.BF );
   1317                           
   1318  0496  1683               	bsf	3,5	;RP0=1, select bank1
   1319  0497  1303               	bcf	3,6	;RP1=0, select bank1
   1320  0498  1C14               	btfss	20,0	;volatile
-  1321  0499  2C9B               	goto	u641
-  1322  049A  2C9C               	goto	u640
-  1323  049B                     u641:
-  1324  049B  2C96               	goto	l217
-  1325  049C                     u640:
-  1326  049C                     l220:
+  1321  0499  2C9B               	goto	u541
+  1322  049A  2C9C               	goto	u540
+  1323  049B                     u541:
+  1324  049B  2C96               	goto	l197
+  1325  049C                     u540:
+  1326  049C                     l200:
   1327  049C  0008               	return
   1328  049D                     __end_of_spiReceiveWait:
   1329                           
@@ -1345,7 +1345,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1331  03D3                     __ptext4:	
   1332 ;; *************** function _setup *****************
   1333 ;; Defined at:
-  1334 ;;		line 258 in file "lab3_main.c"
+  1334 ;;		line 240 in file "lab3_main.c"
   1335 ;; Parameters:    Size  Location     Type
   1336 ;;		None
   1337 ;; Auto vars:     Size  Location     Type
@@ -1376,7 +1376,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1362                           
   1363                           ;psect for function _setup
   1364  03D3                     _setup:
-  1365  03D3                     l1277:	
+  1365  03D3                     l1199:	
   1366                           ;incstack = 0
   1367                           ; Regs used in _setup: [wreg+status,2+status,0+pclath+cstack]
   1368                           
@@ -1386,7 +1386,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1372  03D6  168F               	bsf	15,5	;volatile
   1373  03D7  160F               	bsf	15,4	;volatile
   1374  03D8  140F               	bsf	15,0	;volatile
-  1375  03D9                     l1279:
+  1375  03D9                     l1201:
   1376  03D9  1683               	bsf	3,5	;RP0=1, select bank3
   1377  03DA  1703               	bsf	3,6	;RP1=1, select bank3
   1378  03DB  0189               	clrf	9	;volatile
@@ -1395,38 +1395,38 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1381  03DE  1303               	bcf	3,6	;RP1=0, select bank1
   1382  03DF  0185               	clrf	5	;volatile
   1383  03E0  0186               	clrf	6	;volatile
-  1384  03E1                     l1281:
+  1384  03E1                     l1203:
   1385  03E1  3090               	movlw	144
   1386  03E2  0087               	movwf	7	;volatile
-  1387  03E3                     l1283:
+  1387  03E3                     l1205:
   1388  03E3  0188               	clrf	8	;volatile
-  1389  03E4                     l1285:
+  1389  03E4                     l1207:
   1390  03E4  0189               	clrf	9	;volatile
-  1391  03E5                     l1287:
+  1391  03E5                     l1209:
   1392  03E5  1283               	bcf	3,5	;RP0=0, select bank0
   1393  03E6  1303               	bcf	3,6	;RP1=0, select bank0
   1394  03E7  0185               	clrf	5	;volatile
-  1395  03E8                     l1289:
+  1395  03E8                     l1211:
   1396  03E8  0186               	clrf	6	;volatile
-  1397  03E9                     l1291:
+  1397  03E9                     l1213:
   1398  03E9  0187               	clrf	7	;volatile
-  1399  03EA                     l1293:
+  1399  03EA                     l1215:
   1400  03EA  0188               	clrf	8	;volatile
-  1401  03EB                     l1295:
+  1401  03EB                     l1217:
   1402  03EB  0189               	clrf	9	;volatile
-  1403  03EC                     l1297:
+  1403  03EC                     l1219:
   1404  03EC  178B               	bsf	11,7	;volatile
-  1405  03ED                     l1299:
+  1405  03ED                     l1221:
   1406  03ED  168B               	bsf	11,5	;volatile
-  1407  03EE                     l1301:
+  1407  03EE                     l1223:
   1408  03EE  110B               	bcf	11,2	;volatile
-  1409  03EF                     l1303:
+  1409  03EF                     l1225:
   1410  03EF  1683               	bsf	3,5	;RP0=1, select bank1
   1411  03F0  1303               	bcf	3,6	;RP1=0, select bank1
   1412  03F1  1218               	bcf	24,4	;volatile
-  1413  03F2                     l1305:
+  1413  03F2                     l1227:
   1414  03F2  1518               	bsf	24,2	;volatile
-  1415  03F3                     l1307:
+  1415  03F3                     l1229:
   1416  03F3  1683               	bsf	3,5	;RP0=1, select bank3
   1417  03F4  1703               	bsf	3,6	;RP1=1, select bank3
   1418  03F5  1587               	bsf	7,3	;volatile
@@ -1434,50 +1434,50 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1420  03F7  1683               	bsf	3,5	;RP0=1, select bank1
   1421  03F8  1303               	bcf	3,6	;RP1=0, select bank1
   1422  03F9  0099               	movwf	25	;volatile
-  1423  03FA                     l1309:
+  1423  03FA                     l1231:
   1424  03FA  019A               	clrf	26	;volatile
-  1425  03FB                     l1311:
+  1425  03FB                     l1233:
   1426  03FB  1283               	bcf	3,5	;RP0=0, select bank0
   1427  03FC  1303               	bcf	3,6	;RP1=0, select bank0
   1428  03FD  1798               	bsf	24,7	;volatile
-  1429  03FE                     l1313:
+  1429  03FE                     l1235:
   1430  03FE  1318               	bcf	24,6	;volatile
-  1431  03FF                     l1315:
+  1431  03FF                     l1237:
   1432  03FF  1618               	bsf	24,4	;volatile
-  1433  0400                     l1317:
+  1433  0400                     l1239:
   1434  0400  1683               	bsf	3,5	;RP0=1, select bank1
   1435  0401  1303               	bcf	3,6	;RP1=0, select bank1
   1436  0402  1698               	bsf	24,5	;volatile
-  1437  0403                     l1319:
+  1437  0403                     l1241:
   1438  0403  1281               	bcf	1,5	;volatile
-  1439  0404                     l1321:
+  1439  0404                     l1243:
   1440  0404  1181               	bcf	1,3	;volatile
-  1441  0405                     l1323:
+  1441  0405                     l1245:
   1442  0405  1501               	bsf	1,2	;volatile
-  1443  0406                     l1325:
+  1443  0406                     l1247:
   1444  0406  1481               	bsf	1,1	;volatile
-  1445  0407                     l1327:
+  1445  0407                     l1249:
   1446  0407  1401               	bsf	1,0	;volatile
-  1447  0408                     l1329:
+  1447  0408                     l1251:
   1448  0408  300A               	movlw	10
   1449  0409  1283               	bcf	3,5	;RP0=0, select bank0
   1450  040A  1303               	bcf	3,6	;RP1=0, select bank0
   1451  040B  0081               	movwf	1	;volatile
-  1452  040C                     l1331:
+  1452  040C                     l1253:
   1453  040C  1683               	bsf	3,5	;RP0=1, select bank1
   1454  040D  1303               	bcf	3,6	;RP1=0, select bank1
   1455  040E  1107               	bcf	7,2	;volatile
-  1456  040F                     l1333:
+  1456  040F                     l1255:
   1457  040F  1283               	bcf	3,5	;RP0=0, select bank0
   1458  0410  1303               	bcf	3,6	;RP1=0, select bank0
   1459  0411  1507               	bsf	7,2	;volatile
-  1460  0412                     l1335:
+  1460  0412                     l1257:
   1461  0412  01A0               	clrf	spiInit@sDataSample
   1462  0413  01A1               	clrf	spiInit@sClockIdle
   1463  0414  01A2               	clrf	spiInit@sTransmitEdge
   1464  0415  3020               	movlw	32
   1465  0416  120A  118A  2443  120A  118A  	fcall	_spiInit
-  1466  041B                     l197:
+  1466  041B                     l177:
   1467  041B  0008               	return
   1468  041C                     __end_of_setup:
   1469                           
@@ -1526,7 +1526,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1512  0443  1283               	bcf	3,5	;RP0=0, select bank0
   1513  0444  1303               	bcf	3,6	;RP1=0, select bank0
   1514  0445  00A3               	movwf	spiInit@sType
-  1515  0446                     l1265:
+  1515  0446                     l1187:
   1516                           
   1517                           ;SPI.c: 12: void spiInit(Spi_Type sType, Spi_Data_Sample sDataSample, Spi_Clock_Idle sCl
       +                          ockIdle, Spi_Transmit_Edge sTransmitEdge);SPI.c: 13: {;SPI.c: 14:     TRISC5 = 0;
@@ -1538,26 +1538,26 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1523  0449  1283               	bcf	3,5	;RP0=0, select bank0
   1524  044A  1303               	bcf	3,6	;RP1=0, select bank0
   1525  044B  1D23               	btfss	spiInit@sType,2
-  1526  044C  2C4E               	goto	u631
-  1527  044D  2C4F               	goto	u630
-  1528  044E                     u631:
-  1529  044E  2C55               	goto	l1271
-  1530  044F                     u630:
-  1531  044F                     l1267:
+  1526  044C  2C4E               	goto	u531
+  1527  044D  2C4F               	goto	u530
+  1528  044E                     u531:
+  1529  044E  2C55               	goto	l1193
+  1530  044F                     u530:
+  1531  044F                     l1189:
   1532                           
   1533                           ;SPI.c: 16:     {;SPI.c: 17:         SSPSTAT = sTransmitEdge;
   1534  044F  0822               	movf	spiInit@sTransmitEdge,w
   1535  0450  1683               	bsf	3,5	;RP0=1, select bank1
   1536  0451  1303               	bcf	3,6	;RP1=0, select bank1
   1537  0452  0094               	movwf	20	;volatile
-  1538  0453                     l1269:
+  1538  0453                     l1191:
   1539                           
   1540                           ;SPI.c: 18:         TRISC3 = 1;
   1541  0453  1587               	bsf	7,3	;volatile
   1542                           
   1543                           ;SPI.c: 19:     }
-  1544  0454  2C5B               	goto	l213
-  1545  0455                     l1271:
+  1544  0454  2C5B               	goto	l193
+  1545  0455                     l1193:
   1546                           
   1547                           ;SPI.c: 21:     {;SPI.c: 22:         SSPSTAT = sDataSample | sTransmitEdge;
   1548  0455  0820               	movf	spiInit@sDataSample,w
@@ -1565,11 +1565,11 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1550  0457  1683               	bsf	3,5	;RP0=1, select bank1
   1551  0458  1303               	bcf	3,6	;RP1=0, select bank1
   1552  0459  0094               	movwf	20	;volatile
-  1553  045A                     l1273:
+  1553  045A                     l1195:
   1554                           
   1555                           ;SPI.c: 23:         TRISC3 = 0;
   1556  045A  1187               	bcf	7,3	;volatile
-  1557  045B                     l213:	
+  1557  045B                     l193:	
   1558                           ;SPI.c: 24:     }
   1559                           
   1560                           
@@ -1579,7 +1579,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1564  045D  0823               	movf	spiInit@sType,w
   1565  045E  0421               	iorwf	spiInit@sClockIdle,w
   1566  045F  0094               	movwf	20	;volatile
-  1567  0460                     l214:
+  1567  0460                     l194:
   1568  0460  0008               	return
   1569  0461                     __end_of_spiInit:
   1570                           
@@ -1619,7 +1619,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1604                           
   1605                           ;psect for function ___wmul
   1606  041C                     ___wmul:
-  1607  041C                     l1345:	
+  1607  041C                     l1267:	
   1608                           ;incstack = 0
   1609                           ; Regs used in ___wmul: [wreg+status,2+status,0]
   1610                           
@@ -1627,53 +1627,53 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1612  041D  1303               	bcf	3,6	;RP1=0, select bank0
   1613  041E  01A4               	clrf	___wmul@product
   1614  041F  01A5               	clrf	___wmul@product+1
-  1615  0420                     l1347:
+  1615  0420                     l1269:
   1616  0420  1C20               	btfss	___wmul@multiplier,0
-  1617  0421  2C23               	goto	u651
-  1618  0422  2C24               	goto	u650
-  1619  0423                     u651:
-  1620  0423  2C2A               	goto	l325
-  1621  0424                     u650:
-  1622  0424                     l1349:
+  1617  0421  2C23               	goto	u551
+  1618  0422  2C24               	goto	u550
+  1619  0423                     u551:
+  1620  0423  2C2A               	goto	l305
+  1621  0424                     u550:
+  1622  0424                     l1271:
   1623  0424  0822               	movf	___wmul@multiplicand,w
   1624  0425  07A4               	addwf	___wmul@product,f
   1625  0426  1803               	skipnc
   1626  0427  0AA5               	incf	___wmul@product+1,f
   1627  0428  0823               	movf	___wmul@multiplicand+1,w
   1628  0429  07A5               	addwf	___wmul@product+1,f
-  1629  042A                     l325:
+  1629  042A                     l305:
   1630  042A  3001               	movlw	1
-  1631  042B                     u665:
+  1631  042B                     u565:
   1632  042B  1003               	clrc
   1633  042C  0DA2               	rlf	___wmul@multiplicand,f
   1634  042D  0DA3               	rlf	___wmul@multiplicand+1,f
   1635  042E  3EFF               	addlw	-1
   1636  042F  1D03               	skipz
-  1637  0430  2C2B               	goto	u665
-  1638  0431                     l1351:
+  1637  0430  2C2B               	goto	u565
+  1638  0431                     l1273:
   1639  0431  3001               	movlw	1
-  1640  0432                     u675:
+  1640  0432                     u575:
   1641  0432  1003               	clrc
   1642  0433  0CA1               	rrf	___wmul@multiplier+1,f
   1643  0434  0CA0               	rrf	___wmul@multiplier,f
   1644  0435  3EFF               	addlw	-1
   1645  0436  1D03               	skipz
-  1646  0437  2C32               	goto	u675
-  1647  0438                     l1353:
+  1646  0437  2C32               	goto	u575
+  1647  0438                     l1275:
   1648  0438  0820               	movf	___wmul@multiplier,w
   1649  0439  0421               	iorwf	___wmul@multiplier+1,w
   1650  043A  1D03               	btfss	3,2
-  1651  043B  2C3D               	goto	u681
-  1652  043C  2C3E               	goto	u680
-  1653  043D                     u681:
-  1654  043D  2C20               	goto	l1347
-  1655  043E                     u680:
-  1656  043E                     l1355:
+  1651  043B  2C3D               	goto	u581
+  1652  043C  2C3E               	goto	u580
+  1653  043D                     u581:
+  1654  043D  2C20               	goto	l1269
+  1655  043E                     u580:
+  1656  043E                     l1277:
   1657  043E  0825               	movf	___wmul@product+1,w
   1658  043F  00A1               	movwf	?___wmul+1
   1659  0440  0824               	movf	___wmul@product,w
   1660  0441  00A0               	movwf	?___wmul
-  1661  0442                     l327:
+  1661  0442                     l307:
   1662  0442  0008               	return
   1663  0443                     __end_of___wmul:
   1664                           
@@ -1721,36 +1721,36 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1706  0461  1283               	bcf	3,5	;RP0=0, select bank0
   1707  0462  1303               	bcf	3,6	;RP1=0, select bank0
   1708  0463  00A3               	movwf	___bmul@multiplier
-  1709  0464                     l1359:
+  1709  0464                     l1281:
   1710  0464  01A2               	clrf	___bmul@product
-  1711  0465                     l1361:
+  1711  0465                     l1283:
   1712  0465  1C23               	btfss	___bmul@multiplier,0
-  1713  0466  2C68               	goto	u691
-  1714  0467  2C69               	goto	u690
-  1715  0468                     u691:
-  1716  0468  2C6D               	goto	l1365
-  1717  0469                     u690:
-  1718  0469                     l1363:
+  1713  0466  2C68               	goto	u591
+  1714  0467  2C69               	goto	u590
+  1715  0468                     u591:
+  1716  0468  2C6D               	goto	l1287
+  1717  0469                     u590:
+  1718  0469                     l1285:
   1719  0469  0820               	movf	___bmul@multiplicand,w
   1720  046A  00A1               	movwf	??___bmul
   1721  046B  0821               	movf	??___bmul,w
   1722  046C  07A2               	addwf	___bmul@product,f
-  1723  046D                     l1365:
+  1723  046D                     l1287:
   1724  046D  1003               	clrc
   1725  046E  0DA0               	rlf	___bmul@multiplicand,f
-  1726  046F                     l1367:
+  1726  046F                     l1289:
   1727  046F  1003               	clrc
   1728  0470  0CA3               	rrf	___bmul@multiplier,f
   1729  0471  0823               	movf	___bmul@multiplier,w
   1730  0472  1D03               	btfss	3,2
-  1731  0473  2C75               	goto	u701
-  1732  0474  2C76               	goto	u700
-  1733  0475                     u701:
-  1734  0475  2C65               	goto	l1361
-  1735  0476                     u700:
-  1736  0476                     l1369:
+  1731  0473  2C75               	goto	u601
+  1732  0474  2C76               	goto	u600
+  1733  0475                     u601:
+  1734  0475  2C65               	goto	l1283
+  1735  0476                     u600:
+  1736  0476                     l1291:
   1737  0476  0822               	movf	___bmul@product,w
-  1738  0477                     l351:
+  1738  0477                     l331:
   1739  0477  0008               	return
   1740  0478                     __end_of___bmul:
   1741                           
@@ -1792,153 +1792,153 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1777                           
   1778                           ;psect for function ___awdiv
   1779  036A                     ___awdiv:
-  1780  036A                     l1373:	
+  1780  036A                     l1295:	
   1781                           ;incstack = 0
   1782                           ; Regs used in ___awdiv: [wreg+status,2+status,0]
   1783                           
   1784  036A  1283               	bcf	3,5	;RP0=0, select bank0
   1785  036B  1303               	bcf	3,6	;RP1=0, select bank0
   1786  036C  01AC               	clrf	___awdiv@sign
-  1787  036D                     l1375:
+  1787  036D                     l1297:
   1788  036D  1FA7               	btfss	___awdiv@divisor+1,7
-  1789  036E  2B70               	goto	u711
-  1790  036F  2B71               	goto	u710
-  1791  0370                     u711:
-  1792  0370  2B78               	goto	l1381
-  1793  0371                     u710:
-  1794  0371                     l1377:
+  1789  036E  2B70               	goto	u611
+  1790  036F  2B71               	goto	u610
+  1791  0370                     u611:
+  1792  0370  2B78               	goto	l1303
+  1793  0371                     u610:
+  1794  0371                     l1299:
   1795  0371  09A6               	comf	___awdiv@divisor,f
   1796  0372  09A7               	comf	___awdiv@divisor+1,f
   1797  0373  0AA6               	incf	___awdiv@divisor,f
   1798  0374  1903               	skipnz
   1799  0375  0AA7               	incf	___awdiv@divisor+1,f
-  1800  0376                     l1379:
+  1800  0376                     l1301:
   1801  0376  01AC               	clrf	___awdiv@sign
   1802  0377  0AAC               	incf	___awdiv@sign,f
-  1803  0378                     l1381:
+  1803  0378                     l1303:
   1804  0378  1FA9               	btfss	___awdiv@dividend+1,7
-  1805  0379  2B7B               	goto	u721
-  1806  037A  2B7C               	goto	u720
-  1807  037B                     u721:
-  1808  037B  2B85               	goto	l1387
-  1809  037C                     u720:
-  1810  037C                     l1383:
+  1805  0379  2B7B               	goto	u621
+  1806  037A  2B7C               	goto	u620
+  1807  037B                     u621:
+  1808  037B  2B85               	goto	l1309
+  1809  037C                     u620:
+  1810  037C                     l1305:
   1811  037C  09A8               	comf	___awdiv@dividend,f
   1812  037D  09A9               	comf	___awdiv@dividend+1,f
   1813  037E  0AA8               	incf	___awdiv@dividend,f
   1814  037F  1903               	skipnz
   1815  0380  0AA9               	incf	___awdiv@dividend+1,f
-  1816  0381                     l1385:
+  1816  0381                     l1307:
   1817  0381  3001               	movlw	1
   1818  0382  00AA               	movwf	??___awdiv
   1819  0383  082A               	movf	??___awdiv,w
   1820  0384  06AC               	xorwf	___awdiv@sign,f
-  1821  0385                     l1387:
+  1821  0385                     l1309:
   1822  0385  01AD               	clrf	___awdiv@quotient
   1823  0386  01AE               	clrf	___awdiv@quotient+1
-  1824  0387                     l1389:
+  1824  0387                     l1311:
   1825  0387  0826               	movf	___awdiv@divisor,w
   1826  0388  0427               	iorwf	___awdiv@divisor+1,w
   1827  0389  1903               	btfsc	3,2
-  1828  038A  2B8C               	goto	u731
-  1829  038B  2B8D               	goto	u730
-  1830  038C                     u731:
-  1831  038C  2BC4               	goto	l1409
-  1832  038D                     u730:
-  1833  038D                     l1391:
+  1828  038A  2B8C               	goto	u631
+  1829  038B  2B8D               	goto	u630
+  1830  038C                     u631:
+  1831  038C  2BC4               	goto	l1331
+  1832  038D                     u630:
+  1833  038D                     l1313:
   1834  038D  01AB               	clrf	___awdiv@counter
   1835  038E  0AAB               	incf	___awdiv@counter,f
-  1836  038F  2B9B               	goto	l1397
-  1837  0390                     l1393:
+  1836  038F  2B9B               	goto	l1319
+  1837  0390                     l1315:
   1838  0390  3001               	movlw	1
-  1839  0391                     u745:
+  1839  0391                     u645:
   1840  0391  1003               	clrc
   1841  0392  0DA6               	rlf	___awdiv@divisor,f
   1842  0393  0DA7               	rlf	___awdiv@divisor+1,f
   1843  0394  3EFF               	addlw	-1
   1844  0395  1D03               	skipz
-  1845  0396  2B91               	goto	u745
-  1846  0397                     l1395:
+  1845  0396  2B91               	goto	u645
+  1846  0397                     l1317:
   1847  0397  3001               	movlw	1
   1848  0398  00AA               	movwf	??___awdiv
   1849  0399  082A               	movf	??___awdiv,w
   1850  039A  07AB               	addwf	___awdiv@counter,f
-  1851  039B                     l1397:
+  1851  039B                     l1319:
   1852  039B  1FA7               	btfss	___awdiv@divisor+1,7
-  1853  039C  2B9E               	goto	u751
-  1854  039D  2B9F               	goto	u750
-  1855  039E                     u751:
-  1856  039E  2B90               	goto	l1393
-  1857  039F                     u750:
-  1858  039F                     l1399:
+  1853  039C  2B9E               	goto	u651
+  1854  039D  2B9F               	goto	u650
+  1855  039E                     u651:
+  1856  039E  2B90               	goto	l1315
+  1857  039F                     u650:
+  1858  039F                     l1321:
   1859  039F  3001               	movlw	1
-  1860  03A0                     u765:
+  1860  03A0                     u665:
   1861  03A0  1003               	clrc
   1862  03A1  0DAD               	rlf	___awdiv@quotient,f
   1863  03A2  0DAE               	rlf	___awdiv@quotient+1,f
   1864  03A3  3EFF               	addlw	-1
   1865  03A4  1D03               	skipz
-  1866  03A5  2BA0               	goto	u765
+  1866  03A5  2BA0               	goto	u665
   1867  03A6  0827               	movf	___awdiv@divisor+1,w
   1868  03A7  0229               	subwf	___awdiv@dividend+1,w
   1869  03A8  1D03               	skipz
-  1870  03A9  2BAC               	goto	u775
+  1870  03A9  2BAC               	goto	u675
   1871  03AA  0826               	movf	___awdiv@divisor,w
   1872  03AB  0228               	subwf	___awdiv@dividend,w
-  1873  03AC                     u775:
+  1873  03AC                     u675:
   1874  03AC  1C03               	skipc
-  1875  03AD  2BAF               	goto	u771
-  1876  03AE  2BB0               	goto	u770
-  1877  03AF                     u771:
-  1878  03AF  2BB7               	goto	l1405
-  1879  03B0                     u770:
-  1880  03B0                     l1401:
+  1875  03AD  2BAF               	goto	u671
+  1876  03AE  2BB0               	goto	u670
+  1877  03AF                     u671:
+  1878  03AF  2BB7               	goto	l1327
+  1879  03B0                     u670:
+  1880  03B0                     l1323:
   1881  03B0  0826               	movf	___awdiv@divisor,w
   1882  03B1  02A8               	subwf	___awdiv@dividend,f
   1883  03B2  0827               	movf	___awdiv@divisor+1,w
   1884  03B3  1C03               	skipc
   1885  03B4  03A9               	decf	___awdiv@dividend+1,f
   1886  03B5  02A9               	subwf	___awdiv@dividend+1,f
-  1887  03B6                     l1403:
+  1887  03B6                     l1325:
   1888  03B6  142D               	bsf	___awdiv@quotient,0
-  1889  03B7                     l1405:
+  1889  03B7                     l1327:
   1890  03B7  3001               	movlw	1
-  1891  03B8                     u785:
+  1891  03B8                     u685:
   1892  03B8  1003               	clrc
   1893  03B9  0CA7               	rrf	___awdiv@divisor+1,f
   1894  03BA  0CA6               	rrf	___awdiv@divisor,f
   1895  03BB  3EFF               	addlw	-1
   1896  03BC  1D03               	skipz
-  1897  03BD  2BB8               	goto	u785
-  1898  03BE                     l1407:
+  1897  03BD  2BB8               	goto	u685
+  1898  03BE                     l1329:
   1899  03BE  3001               	movlw	1
   1900  03BF  02AB               	subwf	___awdiv@counter,f
   1901  03C0  1D03               	btfss	3,2
-  1902  03C1  2BC3               	goto	u791
-  1903  03C2  2BC4               	goto	u790
-  1904  03C3                     u791:
-  1905  03C3  2B9F               	goto	l1399
-  1906  03C4                     u790:
-  1907  03C4                     l1409:
+  1902  03C1  2BC3               	goto	u691
+  1903  03C2  2BC4               	goto	u690
+  1904  03C3                     u691:
+  1905  03C3  2B9F               	goto	l1321
+  1906  03C4                     u690:
+  1907  03C4                     l1331:
   1908  03C4  082C               	movf	___awdiv@sign,w
   1909  03C5  1903               	btfsc	3,2
-  1910  03C6  2BC8               	goto	u801
-  1911  03C7  2BC9               	goto	u800
-  1912  03C8                     u801:
-  1913  03C8  2BCE               	goto	l1413
-  1914  03C9                     u800:
-  1915  03C9                     l1411:
+  1910  03C6  2BC8               	goto	u701
+  1911  03C7  2BC9               	goto	u700
+  1912  03C8                     u701:
+  1913  03C8  2BCE               	goto	l1335
+  1914  03C9                     u700:
+  1915  03C9                     l1333:
   1916  03C9  09AD               	comf	___awdiv@quotient,f
   1917  03CA  09AE               	comf	___awdiv@quotient+1,f
   1918  03CB  0AAD               	incf	___awdiv@quotient,f
   1919  03CC  1903               	skipnz
   1920  03CD  0AAE               	incf	___awdiv@quotient+1,f
-  1921  03CE                     l1413:
+  1921  03CE                     l1335:
   1922  03CE  082E               	movf	___awdiv@quotient+1,w
   1923  03CF  00A7               	movwf	?___awdiv+1
   1924  03D0  082D               	movf	___awdiv@quotient,w
   1925  03D1  00A6               	movwf	?___awdiv
-  1926  03D2                     l478:
+  1926  03D2                     l458:
   1927  03D2  0008               	return
   1928  03D3                     __end_of___awdiv:
   1929                           
@@ -1946,7 +1946,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1931  01FF                     __ptext9:	
   1932 ;; *************** function _isr *****************
   1933 ;; Defined at:
-  1934 ;;		line 141 in file "lab3_main.c"
+  1934 ;;		line 142 in file "lab3_main.c"
   1935 ;; Parameters:    Size  Location     Type
   1936 ;;		None
   1937 ;; Auto vars:     Size  Location     Type
@@ -1977,626 +1977,626 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1962                           
   1963                           ;psect for function _isr
   1964  01FF                     _isr:
-  1965  01FF                     i1l1485:
+  1965  01FF                     i1l1407:
   1966                           
-  1967                           ;lab3_main.c: 142:             flag = 2;
+  1967                           ;lab3_main.c: 143:             TXREG = disp__unidad + 48;
   1968  01FF  1D0B               	btfss	11,2	;volatile
-  1969  0200  2A02               	goto	u87_21
-  1970  0201  2A03               	goto	u87_20
-  1971  0202                     u87_21:
-  1972  0202  2A0A               	goto	i1l1491
-  1973  0203                     u87_20:
-  1974  0203                     i1l1487:
+  1969  0200  2A02               	goto	u77_21
+  1970  0201  2A03               	goto	u77_20
+  1971  0202                     u77_21:
+  1972  0202  2A0A               	goto	i1l1413
+  1973  0203                     u77_20:
+  1974  0203                     i1l1409:
   1975                           
-  1976                           ;lab3_main.c: 143:         } else if (flag == 2){
+  1976                           ;lab3_main.c: 144:             flag = 1;
   1977  0203  3001               	movlw	1
   1978  0204  00F4               	movwf	??_isr
   1979  0205  0874               	movf	??_isr,w
   1980  0206  1283               	bcf	3,5	;RP0=0, select bank0
   1981  0207  1303               	bcf	3,6	;RP1=0, select bank0
-  1982  0208  07C2               	addwf	_cont,f
-  1983  0209                     i1l1489:
+  1982  0208  07BF               	addwf	_cont,f
+  1983  0209                     i1l1411:
   1984                           
-  1985                           ;lab3_main.c: 144:             TXREG = display_decimal + 48;
+  1985                           ;lab3_main.c: 145:         } else if (flag == 1){
   1986  0209  110B               	bcf	11,2	;volatile
-  1987  020A                     i1l1491:
+  1987  020A                     i1l1413:
   1988                           
-  1989                           ;lab3_main.c: 147:             TXREG = display_decimal_2 + 48;
+  1989                           ;lab3_main.c: 148:         } else if (flag == 2){
   1990  020A  1283               	bcf	3,5	;RP0=0, select bank0
   1991  020B  1303               	bcf	3,6	;RP1=0, select bank0
   1992  020C  1E8C               	btfss	12,5	;volatile
-  1993  020D  2A0F               	goto	u88_21
-  1994  020E  2A10               	goto	u88_20
-  1995  020F                     u88_21:
-  1996  020F  2ADD               	goto	i1l1567
-  1997  0210                     u88_20:
-  1998  0210                     i1l1493:
+  1993  020D  2A0F               	goto	u78_21
+  1994  020E  2A10               	goto	u78_20
+  1995  020F                     u78_21:
+  1996  020F  2ADD               	goto	i1l1489
+  1997  0210                     u78_20:
+  1998  0210                     i1l1415:
   1999                           
-  2000                           ;lab3_main.c: 148:             flag = 4;
+  2000                           ;lab3_main.c: 150:             flag = 3;
   2001  0210  300D               	movlw	13
   2002  0211  061A               	xorwf	26,w	;volatile
   2003  0212  1D03               	btfss	3,2
-  2004  0213  2A15               	goto	u89_21
-  2005  0214  2A16               	goto	u89_20
-  2006  0215                     u89_21:
-  2007  0215  2A1A               	goto	i1l1497
-  2008  0216                     u89_20:
-  2009  0216                     i1l1495:
+  2004  0213  2A15               	goto	u79_21
+  2005  0214  2A16               	goto	u79_20
+  2006  0215                     u79_21:
+  2007  0215  2A1A               	goto	i1l1419
+  2008  0216                     u79_20:
+  2009  0216                     i1l1417:
   2010                           
-  2011                           ;lab3_main.c: 149:         } else if (flag == 4){
-  2012  0216  0843               	movf	_contador,w
-  2013  0217  0086               	movwf	6	;volatile
+  2011                           ;lab3_main.c: 151:         } else if (flag == 3){
+  2012  0216  0840               	movf	_contador,w
+  2013  0217  0088               	movwf	8	;volatile
   2014                           
-  2015                           ;lab3_main.c: 150:             TXREG = 0x2D;
+  2015                           ;lab3_main.c: 152:             TXREG = disp__decimal_2 + 48;
   2016  0218  3002               	movlw	2
-  2017  0219  0088               	movwf	8	;volatile
-  2018  021A                     i1l1497:
+  2017  0219  0085               	movwf	5	;volatile
+  2018  021A                     i1l1419:
   2019                           
-  2020                           ;lab3_main.c: 152:         }
+  2020                           ;lab3_main.c: 155:             TXREG = 0x2D;
   2021  021A  300D               	movlw	13
   2022  021B  061A               	xorwf	26,w	;volatile
   2023  021C  1903               	btfsc	3,2
-  2024  021D  2A1F               	goto	u90_21
-  2025  021E  2A20               	goto	u90_20
-  2026  021F                     u90_21:
-  2027  021F  2ADD               	goto	i1l1567
-  2028  0220                     u90_20:
-  2029  0220                     i1l1499:
+  2024  021D  2A1F               	goto	u80_21
+  2025  021E  2A20               	goto	u80_20
+  2026  021F                     u80_21:
+  2027  021F  2ADD               	goto	i1l1489
+  2028  0220                     u80_20:
+  2029  0220                     i1l1421:
   2030                           
-  2031                           ;lab3_main.c: 153:         else if (flag == 5){
+  2031                           ;lab3_main.c: 156:             flag = 5;
   2032  0220  081A               	movf	26,w	;volatile
   2033  0221  00F4               	movwf	??_isr
   2034  0222  0874               	movf	??_isr,w
-  2035  0223  00FD               	movwf	_var_temp
-  2036  0224                     i1l1501:
+  2035  0223  00FD               	movwf	_RC_temp
+  2036  0224                     i1l1423:
   2037                           
-  2038                           ;lab3_main.c: 154:             TXREG = display_unidad_s2 + 48;
+  2038                           ;lab3_main.c: 157:         }
   2039  0224  3030               	movlw	48
-  2040  0225  067D               	xorwf	_var_temp,w
+  2040  0225  067D               	xorwf	_RC_temp,w
   2041  0226  1D03               	btfss	3,2
-  2042  0227  2A29               	goto	u91_21
-  2043  0228  2A2A               	goto	u91_20
-  2044  0229                     u91_21:
-  2045  0229  2A2C               	goto	i1l1505
-  2046  022A                     u91_20:
-  2047  022A                     i1l1503:
+  2042  0227  2A29               	goto	u81_21
+  2043  0228  2A2A               	goto	u81_20
+  2044  0229                     u81_21:
+  2045  0229  2A2C               	goto	i1l1427
+  2046  022A                     u81_20:
+  2047  022A                     i1l1425:
   2048                           
-  2049                           ;lab3_main.c: 155:             flag = 6;
-  2050  022A  01FC               	clrf	_cont_temp
+  2049                           ;lab3_main.c: 158:         else if (flag == 5){
+  2050  022A  01FB               	clrf	_cont_temp
   2051                           
-  2052                           ;lab3_main.c: 156:         } else if (flag == 6){
-  2053  022B  2A8D               	goto	i1l1541
-  2054  022C                     i1l1505:
+  2052                           ;lab3_main.c: 159:             TXREG = disp__unidad_u2 + 48;
+  2053  022B  2A8D               	goto	i1l1463
+  2054  022C                     i1l1427:
   2055  022C  3031               	movlw	49
-  2056  022D  067D               	xorwf	_var_temp,w
+  2056  022D  067D               	xorwf	_RC_temp,w
   2057  022E  1D03               	btfss	3,2
-  2058  022F  2A31               	goto	u92_21
-  2059  0230  2A32               	goto	u92_20
-  2060  0231                     u92_21:
-  2061  0231  2A35               	goto	i1l1509
-  2062  0232                     u92_20:
-  2063  0232                     i1l1507:
+  2058  022F  2A31               	goto	u82_21
+  2059  0230  2A32               	goto	u82_20
+  2060  0231                     u82_21:
+  2061  0231  2A35               	goto	i1l1431
+  2062  0232                     u82_20:
+  2063  0232                     i1l1429:
   2064                           
-  2065                           ;lab3_main.c: 157:             TXREG = 0x2E;
-  2066  0232  01FC               	clrf	_cont_temp
-  2067  0233  0AFC               	incf	_cont_temp,f
+  2065                           ;lab3_main.c: 160:             flag = 6;
+  2066  0232  01FB               	clrf	_cont_temp
+  2067  0233  0AFB               	incf	_cont_temp,f
   2068                           
-  2069                           ;lab3_main.c: 158:             flag = 7;
-  2070  0234  2A8D               	goto	i1l1541
-  2071  0235                     i1l1509:
+  2069                           ;lab3_main.c: 161:         } else if (flag == 6){
+  2070  0234  2A8D               	goto	i1l1463
+  2071  0235                     i1l1431:
   2072  0235  3032               	movlw	50
-  2073  0236  067D               	xorwf	_var_temp,w
+  2073  0236  067D               	xorwf	_RC_temp,w
   2074  0237  1D03               	btfss	3,2
-  2075  0238  2A3A               	goto	u93_21
-  2076  0239  2A3B               	goto	u93_20
-  2077  023A                     u93_21:
-  2078  023A  2A40               	goto	i1l1513
-  2079  023B                     u93_20:
-  2080  023B                     i1l1511:
+  2075  0238  2A3A               	goto	u83_21
+  2076  0239  2A3B               	goto	u83_20
+  2077  023A                     u83_21:
+  2078  023A  2A40               	goto	i1l1435
+  2079  023B                     u83_20:
+  2080  023B                     i1l1433:
   2081                           
-  2082                           ;lab3_main.c: 159:         } else if (flag == 7){
+  2082                           ;lab3_main.c: 162:             TXREG = 0x2E;
   2083  023B  3002               	movlw	2
   2084  023C  00F4               	movwf	??_isr
   2085  023D  0874               	movf	??_isr,w
-  2086  023E  00FC               	movwf	_cont_temp
+  2086  023E  00FB               	movwf	_cont_temp
   2087                           
-  2088                           ;lab3_main.c: 160:             TXREG = display_decimal_s2 + 48;
-  2089  023F  2A8D               	goto	i1l1541
-  2090  0240                     i1l1513:
+  2088                           ;lab3_main.c: 163:             flag = 7;
+  2089  023F  2A8D               	goto	i1l1463
+  2090  0240                     i1l1435:
   2091  0240  3033               	movlw	51
-  2092  0241  067D               	xorwf	_var_temp,w
+  2092  0241  067D               	xorwf	_RC_temp,w
   2093  0242  1D03               	btfss	3,2
-  2094  0243  2A45               	goto	u94_21
-  2095  0244  2A46               	goto	u94_20
-  2096  0245                     u94_21:
-  2097  0245  2A4B               	goto	i1l1517
-  2098  0246                     u94_20:
-  2099  0246                     i1l1515:
+  2094  0243  2A45               	goto	u84_21
+  2095  0244  2A46               	goto	u84_20
+  2096  0245                     u84_21:
+  2097  0245  2A4B               	goto	i1l1439
+  2098  0246                     u84_20:
+  2099  0246                     i1l1437:
   2100                           
-  2101                           ;lab3_main.c: 161:             flag = 8;
+  2101                           ;lab3_main.c: 164:         } else if (flag == 7){
   2102  0246  3003               	movlw	3
   2103  0247  00F4               	movwf	??_isr
   2104  0248  0874               	movf	??_isr,w
-  2105  0249  00FC               	movwf	_cont_temp
+  2105  0249  00FB               	movwf	_cont_temp
   2106                           
-  2107                           ;lab3_main.c: 162:         } else if (flag == 8){
-  2108  024A  2A8D               	goto	i1l1541
-  2109  024B                     i1l1517:
+  2107                           ;lab3_main.c: 165:             TXREG = disp__decimal_u2 + 48;
+  2108  024A  2A8D               	goto	i1l1463
+  2109  024B                     i1l1439:
   2110  024B  3034               	movlw	52
-  2111  024C  067D               	xorwf	_var_temp,w
+  2111  024C  067D               	xorwf	_RC_temp,w
   2112  024D  1D03               	btfss	3,2
-  2113  024E  2A50               	goto	u95_21
-  2114  024F  2A51               	goto	u95_20
-  2115  0250                     u95_21:
-  2116  0250  2A56               	goto	i1l1521
-  2117  0251                     u95_20:
-  2118  0251                     i1l1519:
+  2113  024E  2A50               	goto	u85_21
+  2114  024F  2A51               	goto	u85_20
+  2115  0250                     u85_21:
+  2116  0250  2A56               	goto	i1l1443
+  2117  0251                     u85_20:
+  2118  0251                     i1l1441:
   2119                           
-  2120                           ;lab3_main.c: 163:             TXREG = display_decimal_2_s2 + 48;
+  2120                           ;lab3_main.c: 166:             flag = 8;
   2121  0251  3004               	movlw	4
   2122  0252  00F4               	movwf	??_isr
   2123  0253  0874               	movf	??_isr,w
-  2124  0254  00FC               	movwf	_cont_temp
+  2124  0254  00FB               	movwf	_cont_temp
   2125                           
-  2126                           ;lab3_main.c: 164:             flag = 9;
-  2127  0255  2A8D               	goto	i1l1541
-  2128  0256                     i1l1521:
+  2126                           ;lab3_main.c: 167:         } else if (flag == 8){
+  2127  0255  2A8D               	goto	i1l1463
+  2128  0256                     i1l1443:
   2129  0256  3035               	movlw	53
-  2130  0257  067D               	xorwf	_var_temp,w
+  2130  0257  067D               	xorwf	_RC_temp,w
   2131  0258  1D03               	btfss	3,2
-  2132  0259  2A5B               	goto	u96_21
-  2133  025A  2A5C               	goto	u96_20
-  2134  025B                     u96_21:
-  2135  025B  2A61               	goto	i1l1525
-  2136  025C                     u96_20:
-  2137  025C                     i1l1523:
+  2132  0259  2A5B               	goto	u86_21
+  2133  025A  2A5C               	goto	u86_20
+  2134  025B                     u86_21:
+  2135  025B  2A61               	goto	i1l1447
+  2136  025C                     u86_20:
+  2137  025C                     i1l1445:
   2138                           
-  2139                           ;lab3_main.c: 165:         } else if (flag == 9){
+  2139                           ;lab3_main.c: 168:             TXREG = disp__decimal2_u2 + 48;
   2140  025C  3005               	movlw	5
   2141  025D  00F4               	movwf	??_isr
   2142  025E  0874               	movf	??_isr,w
-  2143  025F  00FC               	movwf	_cont_temp
+  2143  025F  00FB               	movwf	_cont_temp
   2144                           
-  2145                           ;lab3_main.c: 166:             TXREG = 0x0D;
-  2146  0260  2A8D               	goto	i1l1541
-  2147  0261                     i1l1525:
+  2145                           ;lab3_main.c: 169:             flag = 9;
+  2146  0260  2A8D               	goto	i1l1463
+  2147  0261                     i1l1447:
   2148  0261  3036               	movlw	54
-  2149  0262  067D               	xorwf	_var_temp,w
+  2149  0262  067D               	xorwf	_RC_temp,w
   2150  0263  1D03               	btfss	3,2
-  2151  0264  2A66               	goto	u97_21
-  2152  0265  2A67               	goto	u97_20
-  2153  0266                     u97_21:
-  2154  0266  2A6C               	goto	i1l1529
-  2155  0267                     u97_20:
-  2156  0267                     i1l1527:
+  2151  0264  2A66               	goto	u87_21
+  2152  0265  2A67               	goto	u87_20
+  2153  0266                     u87_21:
+  2154  0266  2A6C               	goto	i1l1451
+  2155  0267                     u87_20:
+  2156  0267                     i1l1449:
   2157                           
-  2158                           ;lab3_main.c: 167:             flag = 0;
+  2158                           ;lab3_main.c: 170:         } else if (flag == 9){
   2159  0267  3006               	movlw	6
   2160  0268  00F4               	movwf	??_isr
   2161  0269  0874               	movf	??_isr,w
-  2162  026A  00FC               	movwf	_cont_temp
+  2162  026A  00FB               	movwf	_cont_temp
   2163                           
-  2164                           ;lab3_main.c: 168:         }
-  2165  026B  2A8D               	goto	i1l1541
-  2166  026C                     i1l1529:
+  2164                           ;lab3_main.c: 171:             TXREG = 0x0D;
+  2165  026B  2A8D               	goto	i1l1463
+  2166  026C                     i1l1451:
   2167  026C  3037               	movlw	55
-  2168  026D  067D               	xorwf	_var_temp,w
+  2168  026D  067D               	xorwf	_RC_temp,w
   2169  026E  1D03               	btfss	3,2
-  2170  026F  2A71               	goto	u98_21
-  2171  0270  2A72               	goto	u98_20
-  2172  0271                     u98_21:
-  2173  0271  2A77               	goto	i1l1533
-  2174  0272                     u98_20:
-  2175  0272                     i1l1531:
+  2170  026F  2A71               	goto	u88_21
+  2171  0270  2A72               	goto	u88_20
+  2172  0271                     u88_21:
+  2173  0271  2A77               	goto	i1l1455
+  2174  0272                     u88_20:
+  2175  0272                     i1l1453:
   2176                           
-  2177                           ;lab3_main.c: 169:     TXIF = 0;
+  2177                           ;lab3_main.c: 172:             flag = 0;
   2178  0272  3007               	movlw	7
   2179  0273  00F4               	movwf	??_isr
   2180  0274  0874               	movf	??_isr,w
-  2181  0275  00FC               	movwf	_cont_temp
+  2181  0275  00FB               	movwf	_cont_temp
   2182                           
-  2183                           ;lab3_main.c: 170:     }
-  2184  0276  2A8D               	goto	i1l1541
-  2185  0277                     i1l1533:
+  2183                           ;lab3_main.c: 173:         }
+  2184  0276  2A8D               	goto	i1l1463
+  2185  0277                     i1l1455:
   2186  0277  3038               	movlw	56
-  2187  0278  067D               	xorwf	_var_temp,w
+  2187  0278  067D               	xorwf	_RC_temp,w
   2188  0279  1D03               	btfss	3,2
-  2189  027A  2A7C               	goto	u99_21
-  2190  027B  2A7D               	goto	u99_20
-  2191  027C                     u99_21:
-  2192  027C  2A82               	goto	i1l1537
-  2193  027D                     u99_20:
-  2194  027D                     i1l1535:
+  2189  027A  2A7C               	goto	u89_21
+  2190  027B  2A7D               	goto	u89_20
+  2191  027C                     u89_21:
+  2192  027C  2A82               	goto	i1l1459
+  2193  027D                     u89_20:
+  2194  027D                     i1l1457:
   2195                           
-  2196                           ;lab3_main.c: 171: }
+  2196                           ;lab3_main.c: 174:     TXIF = 0;
   2197  027D  3008               	movlw	8
   2198  027E  00F4               	movwf	??_isr
   2199  027F  0874               	movf	??_isr,w
-  2200  0280  00FC               	movwf	_cont_temp
+  2200  0280  00FB               	movwf	_cont_temp
   2201                           
-  2202                           ;lab3_main.c: 172: 
-  2203  0281  2A8D               	goto	i1l1541
-  2204  0282                     i1l1537:
+  2202                           ;lab3_main.c: 175:     }
+  2203  0281  2A8D               	goto	i1l1463
+  2204  0282                     i1l1459:
   2205  0282  3039               	movlw	57
-  2206  0283  067D               	xorwf	_var_temp,w
+  2206  0283  067D               	xorwf	_RC_temp,w
   2207  0284  1D03               	btfss	3,2
-  2208  0285  2A87               	goto	u100_21
-  2209  0286  2A88               	goto	u100_20
-  2210  0287                     u100_21:
-  2211  0287  2A8D               	goto	i1l141
-  2212  0288                     u100_20:
-  2213  0288                     i1l1539:
+  2208  0285  2A87               	goto	u90_21
+  2209  0286  2A88               	goto	u90_20
+  2210  0287                     u90_21:
+  2211  0287  2A8D               	goto	i1l143
+  2212  0288                     u90_20:
+  2213  0288                     i1l1461:
   2214                           
-  2215                           ;lab3_main.c: 173: uint8_t ascii_to_dec(uint8_t val){
+  2215                           ;lab3_main.c: 176: }
   2216  0288  3009               	movlw	9
   2217  0289  00F4               	movwf	??_isr
   2218  028A  0874               	movf	??_isr,w
-  2219  028B  00FC               	movwf	_cont_temp
-  2220  028C  2A8D               	goto	i1l1541
-  2221  028D                     i1l141:
-  2222  028D                     i1l1541:
+  2219  028B  00FB               	movwf	_cont_temp
+  2220  028C  2A8D               	goto	i1l1463
+  2221  028D                     i1l143:
+  2222  028D                     i1l1463:
   2223                           
-  2224                           ;lab3_main.c: 175:         return 0;
+  2224                           ;lab3_main.c: 178: 
   2225  028D  0346               	decf	_u_flag,w
   2226  028E  1D03               	btfss	3,2
-  2227  028F  2A91               	goto	u101_21
-  2228  0290  2A92               	goto	u101_20
-  2229  0291                     u101_21:
-  2230  0291  2A9E               	goto	i1l1549
-  2231  0292                     u101_20:
-  2232  0292                     i1l1543:
+  2227  028F  2A91               	goto	u91_21
+  2228  0290  2A92               	goto	u91_20
+  2229  0291                     u91_21:
+  2230  0291  2A9E               	goto	i1l1471
+  2231  0292                     u91_20:
+  2232  0292                     i1l1465:
   2233                           
-  2234                           ;lab3_main.c: 176:     }else if(val==49){
-  2235  0292  087C               	movf	_cont_temp,w
+  2234                           ;lab3_main.c: 179: 
+  2235  0292  087B               	movf	_cont_temp,w
   2236  0293  00F4               	movwf	??_isr
   2237  0294  0874               	movf	??_isr,w
-  2238  0295  00C3               	movwf	_contador
+  2238  0295  00C0               	movwf	_contador
   2239                           
-  2240                           ;lab3_main.c: 177:         return 1;
-  2241  0296  087C               	movf	_cont_temp,w
+  2240                           ;lab3_main.c: 180: 
+  2241  0296  087B               	movf	_cont_temp,w
   2242  0297  00F4               	movwf	??_isr
   2243  0298  0874               	movf	??_isr,w
-  2244  0299  00FB               	movwf	_unidad
-  2245  029A                     i1l1545:
+  2244  0299  00FC               	movwf	_unidad
+  2245  029A                     i1l1467:
   2246                           
-  2247                           ;lab3_main.c: 178:     }else if(val==50){
+  2247                           ;lab3_main.c: 181: 
   2248  029A  01C6               	clrf	_u_flag
-  2249  029B                     i1l1547:
+  2249  029B                     i1l1469:
   2250                           
-  2251                           ;lab3_main.c: 179:         return 2;
-  2252  029B  01C1               	clrf	_d_flag
-  2253  029C  0AC1               	incf	_d_flag,f
+  2251                           ;lab3_main.c: 182: void setup(void){
+  2252  029B  01C3               	clrf	_d_flag
+  2253  029C  0AC3               	incf	_d_flag,f
   2254                           
-  2255                           ;lab3_main.c: 180:     }else if(val==51){
-  2256  029D  2ADD               	goto	i1l1567
-  2257  029E                     i1l1549:
-  2258  029E  0341               	decf	_d_flag,w
+  2255                           ;lab3_main.c: 183: 
+  2256  029D  2ADD               	goto	i1l1489
+  2257  029E                     i1l1471:
+  2258  029E  0343               	decf	_d_flag,w
   2259  029F  1D03               	btfss	3,2
-  2260  02A0  2AA2               	goto	u102_21
-  2261  02A1  2AA3               	goto	u102_20
-  2262  02A2                     u102_21:
-  2263  02A2  2ABB               	goto	i1l1559
-  2264  02A3                     u102_20:
-  2265  02A3                     i1l1551:
+  2260  02A0  2AA2               	goto	u92_21
+  2261  02A1  2AA3               	goto	u92_20
+  2262  02A2                     u92_21:
+  2263  02A2  2ABB               	goto	i1l1481
+  2264  02A3                     u92_20:
+  2265  02A3                     i1l1473:
   2266                           
-  2267                           ;lab3_main.c: 182:     }else if(val==52){
+  2267                           ;lab3_main.c: 185:     OSCCONbits.IRCF1 = 1;
   2268  02A3  300A               	movlw	10
   2269  02A4  00F4               	movwf	??_isr
   2270  02A5  0874               	movf	??_isr,w
   2271  02A6  00F0               	movwf	i1___bmul@multiplicand
-  2272  02A7  087B               	movf	_unidad,w
+  2272  02A7  087C               	movf	_unidad,w
   2273  02A8  120A  118A  2478  120A  118A  	fcall	i1___bmul
-  2274  02AD  077C               	addwf	_cont_temp,w
+  2274  02AD  077B               	addwf	_cont_temp,w
   2275  02AE  00F5               	movwf	??_isr+1
   2276  02AF  0875               	movf	??_isr+1,w
   2277  02B0  1283               	bcf	3,5	;RP0=0, select bank0
   2278  02B1  1303               	bcf	3,6	;RP1=0, select bank0
-  2279  02B2  00C3               	movwf	_contador
-  2280  02B3                     i1l1553:
+  2279  02B2  00C0               	movwf	_contador
+  2280  02B3                     i1l1475:
   2281                           
-  2282                           ;lab3_main.c: 183:         return 4;
-  2283  02B3  087C               	movf	_cont_temp,w
+  2282                           ;lab3_main.c: 186:     OSCCONbits.IRCF0 = 1;
+  2283  02B3  087B               	movf	_cont_temp,w
   2284  02B4  00F4               	movwf	??_isr
   2285  02B5  0874               	movf	??_isr,w
-  2286  02B6  00BF               	movwf	_decena
-  2287  02B7                     i1l1555:
+  2286  02B6  00C1               	movwf	_decena
+  2287  02B7                     i1l1477:
   2288                           
-  2289                           ;lab3_main.c: 184:     }else if(val==53){
-  2290  02B7  01C1               	clrf	_d_flag
-  2291  02B8                     i1l1557:
+  2289                           ;lab3_main.c: 187:     OSCCONbits.SCS = 1;
+  2290  02B7  01C3               	clrf	_d_flag
+  2291  02B8                     i1l1479:
   2292                           
-  2293                           ;lab3_main.c: 185:         return 5;
-  2294  02B8  01C0               	clrf	_c_flag
-  2295  02B9  0AC0               	incf	_c_flag,f
+  2293                           ;lab3_main.c: 188: 
+  2294  02B8  01C2               	clrf	_c_flag
+  2295  02B9  0AC2               	incf	_c_flag,f
   2296                           
-  2297                           ;lab3_main.c: 186:     }else if(val==54){
-  2298  02BA  2ADD               	goto	i1l1567
-  2299  02BB                     i1l1559:
-  2300  02BB  0340               	decf	_c_flag,w
+  2297                           ;lab3_main.c: 189: 
+  2298  02BA  2ADD               	goto	i1l1489
+  2299  02BB                     i1l1481:
+  2300  02BB  0342               	decf	_c_flag,w
   2301  02BC  1D03               	btfss	3,2
-  2302  02BD  2ABF               	goto	u103_21
-  2303  02BE  2AC0               	goto	u103_20
-  2304  02BF                     u103_21:
-  2305  02BF  2ADD               	goto	i1l127
-  2306  02C0                     u103_20:
-  2307  02C0                     i1l1561:
+  2302  02BD  2ABF               	goto	u93_21
+  2303  02BE  2AC0               	goto	u93_20
+  2304  02BF                     u93_21:
+  2305  02BF  2ADD               	goto	i1l129
+  2306  02C0                     u93_20:
+  2307  02C0                     i1l1483:
   2308                           
-  2309                           ;lab3_main.c: 188:     }else if(val==55){
+  2309                           ;lab3_main.c: 191:     ANSEL = 0x00;
   2310  02C0  300A               	movlw	10
   2311  02C1  00F4               	movwf	??_isr
   2312  02C2  0874               	movf	??_isr,w
   2313  02C3  00F0               	movwf	i1___bmul@multiplicand
-  2314  02C4  083F               	movf	_decena,w
+  2314  02C4  0841               	movf	_decena,w
   2315  02C5  120A  118A  2478  120A  118A  	fcall	i1___bmul
   2316  02CA  00F5               	movwf	??_isr+1
   2317  02CB  3064               	movlw	100
   2318  02CC  00F6               	movwf	??_isr+2
   2319  02CD  0876               	movf	??_isr+2,w
   2320  02CE  00F0               	movwf	i1___bmul@multiplicand
-  2321  02CF  087B               	movf	_unidad,w
+  2321  02CF  087C               	movf	_unidad,w
   2322  02D0  120A  118A  2478  120A  118A  	fcall	i1___bmul
   2323  02D5  0775               	addwf	??_isr+1,w
-  2324  02D6  077C               	addwf	_cont_temp,w
+  2324  02D6  077B               	addwf	_cont_temp,w
   2325  02D7  00F7               	movwf	??_isr+3
   2326  02D8  0877               	movf	??_isr+3,w
   2327  02D9  1283               	bcf	3,5	;RP0=0, select bank0
   2328  02DA  1303               	bcf	3,6	;RP1=0, select bank0
-  2329  02DB  00C3               	movwf	_contador
-  2330  02DC  2AB7               	goto	i1l1555
-  2331  02DD                     i1l127:	
-  2332                           ;lab3_main.c: 192:     }else if(val==57){
+  2329  02DB  00C0               	movwf	_contador
+  2330  02DC  2AB7               	goto	i1l1477
+  2331  02DD                     i1l129:	
+  2332                           ;lab3_main.c: 195:     TRISC = 0x90;
   2333                           
-  2334  02DD                     i1l1567:
+  2334  02DD                     i1l1489:
   2335                           
-  2336                           ;lab3_main.c: 194:     }
+  2336                           ;lab3_main.c: 199:     PORTA = 0x00;
   2337  02DD  1E0C               	btfss	12,4	;volatile
-  2338  02DE  2AE0               	goto	u104_21
-  2339  02DF  2AE1               	goto	u104_20
-  2340  02E0                     u104_21:
-  2341  02E0  2B63               	goto	i1l172
-  2342  02E1                     u104_20:
-  2343  02E1                     i1l1569:
+  2338  02DE  2AE0               	goto	u94_21
+  2339  02DF  2AE1               	goto	u94_20
+  2340  02E0                     u94_21:
+  2341  02E0  2B63               	goto	i1l174
+  2342  02E1                     u94_20:
+  2343  02E1                     i1l1491:
   2344                           
-  2345                           ;lab3_main.c: 195: 
+  2345                           ;lab3_main.c: 200:     PORTB = 0x00;
   2346  02E1  087A               	movf	_flag,w
   2347  02E2  1D03               	btfss	3,2
-  2348  02E3  2AE5               	goto	u105_21
-  2349  02E4  2AE6               	goto	u105_20
-  2350  02E5                     u105_21:
-  2351  02E5  2AEC               	goto	i1l1575
-  2352  02E6                     u105_20:
-  2353  02E6                     i1l1571:
+  2348  02E3  2AE5               	goto	u95_21
+  2349  02E4  2AE6               	goto	u95_20
+  2350  02E5                     u95_21:
+  2351  02E5  2AEC               	goto	i1l1497
+  2352  02E6                     u95_20:
+  2353  02E6                     i1l1493:
   2354                           
-  2355                           ;lab3_main.c: 196: }
-  2356  02E6  083E               	movf	_display_unidad,w
+  2355                           ;lab3_main.c: 201:     PORTC = 0x00;
+  2356  02E6  083E               	movf	_disp__unidad,w
   2357  02E7  3E30               	addlw	48
   2358  02E8  0099               	movwf	25	;volatile
-  2359  02E9                     i1l1573:
+  2359  02E9                     i1l1495:
   2360                           
-  2361                           ;lab3_main.c: 197: 
+  2361                           ;lab3_main.c: 202:     PORTD = 0x00;
   2362  02E9  01FA               	clrf	_flag
   2363  02EA  0AFA               	incf	_flag,f
   2364                           
-  2365                           ;lab3_main.c: 198: 
-  2366  02EB  2B62               	goto	i1l1623
-  2367  02EC                     i1l1575:
+  2365                           ;lab3_main.c: 203:     PORTE = 0x00;
+  2366  02EB  2B62               	goto	i1l1545
+  2367  02EC                     i1l1497:
   2368  02EC  037A               	decf	_flag,w
   2369  02ED  1D03               	btfss	3,2
-  2370  02EE  2AF0               	goto	u106_21
-  2371  02EF  2AF1               	goto	u106_20
-  2372  02F0                     u106_21:
-  2373  02F0  2AF8               	goto	i1l1579
-  2374  02F1                     u106_20:
-  2375  02F1                     i1l1577:
+  2370  02EE  2AF0               	goto	u96_21
+  2371  02EF  2AF1               	goto	u96_20
+  2372  02F0                     u96_21:
+  2373  02F0  2AF8               	goto	i1l1501
+  2374  02F1                     u96_20:
+  2375  02F1                     i1l1499:
   2376                           
-  2377                           ;lab3_main.c: 199: 
+  2377                           ;lab3_main.c: 204: 
   2378  02F1  302E               	movlw	46
   2379  02F2  0099               	movwf	25	;volatile
   2380                           
-  2381                           ;lab3_main.c: 200: void setup(void){
+  2381                           ;lab3_main.c: 205: 
   2382  02F3  3002               	movlw	2
   2383  02F4  00F4               	movwf	??_isr
   2384  02F5  0874               	movf	??_isr,w
   2385  02F6  00FA               	movwf	_flag
   2386                           
-  2387                           ;lab3_main.c: 201: 
-  2388  02F7  2B62               	goto	i1l1623
-  2389  02F8                     i1l1579:
+  2387                           ;lab3_main.c: 206:     INTCONbits.GIE = 1;
+  2388  02F7  2B62               	goto	i1l1545
+  2389  02F8                     i1l1501:
   2390  02F8  3002               	movlw	2
   2391  02F9  067A               	xorwf	_flag,w
   2392  02FA  1D03               	btfss	3,2
-  2393  02FB  2AFD               	goto	u107_21
-  2394  02FC  2AFE               	goto	u107_20
-  2395  02FD                     u107_21:
-  2396  02FD  2B06               	goto	i1l1585
-  2397  02FE                     u107_20:
-  2398  02FE                     i1l1581:
+  2393  02FB  2AFD               	goto	u97_21
+  2394  02FC  2AFE               	goto	u97_20
+  2395  02FD                     u97_21:
+  2396  02FD  2B06               	goto	i1l1507
+  2397  02FE                     u97_20:
+  2398  02FE                     i1l1503:
   2399                           
-  2400                           ;lab3_main.c: 202:     OSCCONbits.IRCF2 = 1;
-  2401  02FE  083D               	movf	_display_decimal,w
+  2400                           ;lab3_main.c: 207:     INTCONbits.T0IE = 1;
+  2401  02FE  083D               	movf	_disp__decimal,w
   2402  02FF  3E30               	addlw	48
   2403  0300  0099               	movwf	25	;volatile
-  2404  0301                     i1l1583:
+  2404  0301                     i1l1505:
   2405                           
-  2406                           ;lab3_main.c: 203:     OSCCONbits.IRCF1 = 1;
+  2406                           ;lab3_main.c: 208:     INTCONbits.T0IF = 0;
   2407  0301  3003               	movlw	3
   2408  0302  00F4               	movwf	??_isr
   2409  0303  0874               	movf	??_isr,w
   2410  0304  00FA               	movwf	_flag
   2411                           
-  2412                           ;lab3_main.c: 204:     OSCCONbits.IRCF0 = 1;
-  2413  0305  2B62               	goto	i1l1623
-  2414  0306                     i1l1585:
+  2412                           ;lab3_main.c: 209: 
+  2413  0305  2B62               	goto	i1l1545
+  2414  0306                     i1l1507:
   2415  0306  3003               	movlw	3
   2416  0307  067A               	xorwf	_flag,w
   2417  0308  1D03               	btfss	3,2
-  2418  0309  2B0B               	goto	u108_21
-  2419  030A  2B0C               	goto	u108_20
-  2420  030B                     u108_21:
-  2421  030B  2B14               	goto	i1l1591
-  2422  030C                     u108_20:
-  2423  030C                     i1l1587:
+  2418  0309  2B0B               	goto	u98_21
+  2419  030A  2B0C               	goto	u98_20
+  2420  030B                     u98_21:
+  2421  030B  2B14               	goto	i1l1513
+  2422  030C                     u98_20:
+  2423  030C                     i1l1509:
   2424                           
-  2425                           ;lab3_main.c: 205:     OSCCONbits.SCS = 1;
-  2426  030C  083C               	movf	_display_decimal_2,w
+  2425                           ;lab3_main.c: 210: 
+  2426  030C  083C               	movf	_disp__decimal_2,w
   2427  030D  3E30               	addlw	48
   2428  030E  0099               	movwf	25	;volatile
-  2429  030F                     i1l1589:
+  2429  030F                     i1l1511:
   2430                           
-  2431                           ;lab3_main.c: 206: 
+  2431                           ;lab3_main.c: 211:     TXSTAbits.SYNC = 0;
   2432  030F  3004               	movlw	4
   2433  0310  00F4               	movwf	??_isr
   2434  0311  0874               	movf	??_isr,w
   2435  0312  00FA               	movwf	_flag
   2436                           
-  2437                           ;lab3_main.c: 207: 
-  2438  0313  2B62               	goto	i1l1623
-  2439  0314                     i1l1591:
+  2437                           ;lab3_main.c: 212:     TXSTAbits.BRGH = 1;
+  2438  0313  2B62               	goto	i1l1545
+  2439  0314                     i1l1513:
   2440  0314  3004               	movlw	4
   2441  0315  067A               	xorwf	_flag,w
   2442  0316  1D03               	btfss	3,2
-  2443  0317  2B19               	goto	u109_21
-  2444  0318  2B1A               	goto	u109_20
-  2445  0319                     u109_21:
-  2446  0319  2B21               	goto	i1l1595
-  2447  031A                     u109_20:
-  2448  031A                     i1l1593:
+  2443  0317  2B19               	goto	u99_21
+  2444  0318  2B1A               	goto	u99_20
+  2445  0319                     u99_21:
+  2446  0319  2B21               	goto	i1l1517
+  2447  031A                     u99_20:
+  2448  031A                     i1l1515:
   2449                           
-  2450                           ;lab3_main.c: 208:     ANSELH = 0x00;
+  2450                           ;lab3_main.c: 213: 
   2451  031A  302D               	movlw	45
   2452  031B  0099               	movwf	25	;volatile
   2453                           
-  2454                           ;lab3_main.c: 209:     ANSEL = 0x00;
+  2454                           ;lab3_main.c: 214:     BAUDCTLbits.BRG16 = 1;
   2455  031C  3005               	movlw	5
   2456  031D  00F4               	movwf	??_isr
   2457  031E  0874               	movf	??_isr,w
   2458  031F  00FA               	movwf	_flag
   2459                           
-  2460                           ;lab3_main.c: 210: 
-  2461  0320  2B62               	goto	i1l1623
-  2462  0321                     i1l1595:
+  2460                           ;lab3_main.c: 215: 
+  2461  0320  2B62               	goto	i1l1545
+  2462  0321                     i1l1517:
   2463  0321  3005               	movlw	5
   2464  0322  067A               	xorwf	_flag,w
   2465  0323  1D03               	btfss	3,2
-  2466  0324  2B26               	goto	u110_21
-  2467  0325  2B27               	goto	u110_20
-  2468  0326                     u110_21:
-  2469  0326  2B2F               	goto	i1l1601
-  2470  0327                     u110_20:
-  2471  0327                     i1l1597:
+  2466  0324  2B26               	goto	u100_21
+  2467  0325  2B27               	goto	u100_20
+  2468  0326                     u100_21:
+  2469  0326  2B2F               	goto	i1l1523
+  2470  0327                     u100_20:
+  2471  0327                     i1l1519:
   2472                           
-  2473                           ;lab3_main.c: 212:     TRISB = 0x00;
-  2474  0327  083B               	movf	_display_unidad_s2,w
+  2473                           ;lab3_main.c: 217:     SPBRGH = 0;
+  2474  0327  083B               	movf	_disp__unidad_u2,w
   2475  0328  3E30               	addlw	48
   2476  0329  0099               	movwf	25	;volatile
-  2477  032A                     i1l1599:
+  2477  032A                     i1l1521:
   2478                           
-  2479                           ;lab3_main.c: 213:     TRISC = 0x90;
+  2479                           ;lab3_main.c: 218: 
   2480  032A  3006               	movlw	6
   2481  032B  00F4               	movwf	??_isr
   2482  032C  0874               	movf	??_isr,w
   2483  032D  00FA               	movwf	_flag
   2484                           
-  2485                           ;lab3_main.c: 214:     TRISD = 0x00;
-  2486  032E  2B62               	goto	i1l1623
-  2487  032F                     i1l1601:
+  2485                           ;lab3_main.c: 219:     RCSTAbits.SPEN = 1;
+  2486  032E  2B62               	goto	i1l1545
+  2487  032F                     i1l1523:
   2488  032F  3006               	movlw	6
   2489  0330  067A               	xorwf	_flag,w
   2490  0331  1D03               	btfss	3,2
-  2491  0332  2B34               	goto	u111_21
-  2492  0333  2B35               	goto	u111_20
-  2493  0334                     u111_21:
-  2494  0334  2B3C               	goto	i1l1605
-  2495  0335                     u111_20:
-  2496  0335                     i1l1603:
+  2491  0332  2B34               	goto	u101_21
+  2492  0333  2B35               	goto	u101_20
+  2493  0334                     u101_21:
+  2494  0334  2B3C               	goto	i1l1527
+  2495  0335                     u101_20:
+  2496  0335                     i1l1525:
   2497                           
-  2498                           ;lab3_main.c: 215:     TRISE = 0x00;
+  2498                           ;lab3_main.c: 220:     RCSTAbits.RX9 = 0;
   2499  0335  302E               	movlw	46
   2500  0336  0099               	movwf	25	;volatile
   2501                           
-  2502                           ;lab3_main.c: 216: 
+  2502                           ;lab3_main.c: 221:     RCSTAbits.CREN = 1;
   2503  0337  3007               	movlw	7
   2504  0338  00F4               	movwf	??_isr
   2505  0339  0874               	movf	??_isr,w
   2506  033A  00FA               	movwf	_flag
   2507                           
-  2508                           ;lab3_main.c: 217:     PORTA = 0x00;
-  2509  033B  2B62               	goto	i1l1623
-  2510  033C                     i1l1605:
+  2508                           ;lab3_main.c: 222: 
+  2509  033B  2B62               	goto	i1l1545
+  2510  033C                     i1l1527:
   2511  033C  3007               	movlw	7
   2512  033D  067A               	xorwf	_flag,w
   2513  033E  1D03               	btfss	3,2
-  2514  033F  2B41               	goto	u112_21
-  2515  0340  2B42               	goto	u112_20
-  2516  0341                     u112_21:
-  2517  0341  2B4A               	goto	i1l1611
-  2518  0342                     u112_20:
-  2519  0342                     i1l1607:
+  2514  033F  2B41               	goto	u102_21
+  2515  0340  2B42               	goto	u102_20
+  2516  0341                     u102_21:
+  2517  0341  2B4A               	goto	i1l1533
+  2518  0342                     u102_20:
+  2519  0342                     i1l1529:
   2520                           
-  2521                           ;lab3_main.c: 218:     PORTB = 0x00;
-  2522  0342  083A               	movf	_display_decimal_s2,w
+  2521                           ;lab3_main.c: 223:     TXSTAbits.TXEN = 1;
+  2522  0342  083A               	movf	_disp__decimal_u2,w
   2523  0343  3E30               	addlw	48
   2524  0344  0099               	movwf	25	;volatile
-  2525  0345                     i1l1609:
+  2525  0345                     i1l1531:
   2526                           
-  2527                           ;lab3_main.c: 219:     PORTC = 0x00;
+  2527                           ;lab3_main.c: 224: 
   2528  0345  3008               	movlw	8
   2529  0346  00F4               	movwf	??_isr
   2530  0347  0874               	movf	??_isr,w
   2531  0348  00FA               	movwf	_flag
   2532                           
-  2533                           ;lab3_main.c: 220:     PORTD = 0x00;
-  2534  0349  2B62               	goto	i1l1623
-  2535  034A                     i1l1611:
+  2533                           ;lab3_main.c: 225: 
+  2534  0349  2B62               	goto	i1l1545
+  2535  034A                     i1l1533:
   2536  034A  3008               	movlw	8
   2537  034B  067A               	xorwf	_flag,w
   2538  034C  1D03               	btfss	3,2
-  2539  034D  2B4F               	goto	u113_21
-  2540  034E  2B50               	goto	u113_20
-  2541  034F                     u113_21:
-  2542  034F  2B58               	goto	i1l1617
-  2543  0350                     u113_20:
-  2544  0350                     i1l1613:
+  2539  034D  2B4F               	goto	u103_21
+  2540  034E  2B50               	goto	u103_20
+  2541  034F                     u103_21:
+  2542  034F  2B58               	goto	i1l1539
+  2543  0350                     u103_20:
+  2544  0350                     i1l1535:
   2545                           
-  2546                           ;lab3_main.c: 221:     PORTE = 0x00;
-  2547  0350  0839               	movf	_display_decimal_2_s2,w
+  2546                           ;lab3_main.c: 226:     OPTION_REGbits.T0CS = 0;
+  2547  0350  0839               	movf	_disp__decimal2_u2,w
   2548  0351  3E30               	addlw	48
   2549  0352  0099               	movwf	25	;volatile
-  2550  0353                     i1l1615:
+  2550  0353                     i1l1537:
   2551                           
-  2552                           ;lab3_main.c: 222: 
+  2552                           ;lab3_main.c: 227:     OPTION_REGbits.PSA = 0;
   2553  0353  3009               	movlw	9
   2554  0354  00F4               	movwf	??_isr
   2555  0355  0874               	movf	??_isr,w
   2556  0356  00FA               	movwf	_flag
   2557                           
-  2558                           ;lab3_main.c: 223: 
-  2559  0357  2B62               	goto	i1l1623
-  2560  0358                     i1l1617:
+  2558                           ;lab3_main.c: 228:     OPTION_REGbits.PS2 = 1;
+  2559  0357  2B62               	goto	i1l1545
+  2560  0358                     i1l1539:
   2561  0358  3009               	movlw	9
   2562  0359  067A               	xorwf	_flag,w
   2563  035A  1D03               	btfss	3,2
-  2564  035B  2B5D               	goto	u114_21
-  2565  035C  2B5E               	goto	u114_20
-  2566  035D                     u114_21:
-  2567  035D  2B62               	goto	i1l166
-  2568  035E                     u114_20:
-  2569  035E                     i1l1619:
+  2564  035B  2B5D               	goto	u104_21
+  2565  035C  2B5E               	goto	u104_20
+  2566  035D                     u104_21:
+  2567  035D  2B62               	goto	i1l168
+  2568  035E                     u104_20:
+  2569  035E                     i1l1541:
   2570                           
-  2571                           ;lab3_main.c: 224:     INTCONbits.GIE = 1;
+  2571                           ;lab3_main.c: 229:     OPTION_REGbits.PS1 = 1;
   2572  035E  300D               	movlw	13
   2573  035F  0099               	movwf	25	;volatile
-  2574  0360                     i1l1621:
+  2574  0360                     i1l1543:
   2575                           
-  2576                           ;lab3_main.c: 225:     INTCONbits.T0IE = 1;
+  2576                           ;lab3_main.c: 230:     OPTION_REGbits.PS0 = 1;
   2577  0360  01FA               	clrf	_flag
-  2578  0361  2B62               	goto	i1l1623
-  2579  0362                     i1l166:
-  2580  0362                     i1l1623:
+  2578  0361  2B62               	goto	i1l1545
+  2579  0362                     i1l168:
+  2580  0362                     i1l1545:
   2581                           
-  2582                           ;lab3_main.c: 227: 
+  2582                           ;lab3_main.c: 232: 
   2583  0362  120C               	bcf	12,4	;volatile
-  2584  0363                     i1l172:
+  2584  0363                     i1l174:
   2585  0363  0879               	movf	??_isr+5,w
   2586  0364  008A               	movwf	10
   2587  0365  0E78               	swapf	??_isr+4,w
@@ -2661,36 +2661,36 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   2646                           ; Regs used in i1___bmul: [wreg+status,2+status,0]
   2647                           ;i1___bmul@multiplier stored from wreg
   2648  0478  00F3               	movwf	i1___bmul@multiplier
-  2649  0479                     i1l1417:
+  2649  0479                     i1l1339:
   2650  0479  01F2               	clrf	i1___bmul@product
-  2651  047A                     i1l1419:
+  2651  047A                     i1l1341:
   2652  047A  1C73               	btfss	i1___bmul@multiplier,0
-  2653  047B  2C7D               	goto	u81_21
-  2654  047C  2C7E               	goto	u81_20
-  2655  047D                     u81_21:
-  2656  047D  2C82               	goto	i1l1423
-  2657  047E                     u81_20:
-  2658  047E                     i1l1421:
+  2653  047B  2C7D               	goto	u71_21
+  2654  047C  2C7E               	goto	u71_20
+  2655  047D                     u71_21:
+  2656  047D  2C82               	goto	i1l1345
+  2657  047E                     u71_20:
+  2658  047E                     i1l1343:
   2659  047E  0870               	movf	i1___bmul@multiplicand,w
   2660  047F  00F1               	movwf	??i1___bmul
   2661  0480  0871               	movf	??i1___bmul,w
   2662  0481  07F2               	addwf	i1___bmul@product,f
-  2663  0482                     i1l1423:
+  2663  0482                     i1l1345:
   2664  0482  1003               	clrc
   2665  0483  0DF0               	rlf	i1___bmul@multiplicand,f
-  2666  0484                     i1l1425:
+  2666  0484                     i1l1347:
   2667  0484  1003               	clrc
   2668  0485  0CF3               	rrf	i1___bmul@multiplier,f
   2669  0486  0873               	movf	i1___bmul@multiplier,w
   2670  0487  1D03               	btfss	3,2
-  2671  0488  2C8A               	goto	u82_21
-  2672  0489  2C8B               	goto	u82_20
-  2673  048A                     u82_21:
-  2674  048A  2C7A               	goto	i1l1419
-  2675  048B                     u82_20:
-  2676  048B                     i1l1427:
+  2671  0488  2C8A               	goto	u72_21
+  2672  0489  2C8B               	goto	u72_20
+  2673  048A                     u72_21:
+  2674  048A  2C7A               	goto	i1l1341
+  2675  048B                     u72_20:
+  2676  048B                     i1l1349:
   2677  048B  0872               	movf	i1___bmul@product,w
-  2678  048C                     i1l351:
+  2678  048C                     i1l331:
   2679  048C  0008               	return
   2680  048D                     __end_ofi1___bmul:
   2681  007E                     btemp	set	126	;btemp
@@ -2892,156 +2892,156 @@ EEDATA             100      0       0       0        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.31 build 20201012212115 
-Symbol Table                                                                                   Tue Aug 03 15:05:41 2021
+Symbol Table                                                                                   Tue Aug 03 19:14:11 2021
 
          ___bmul@product 0022              _SSPSTATbits 0094             ___awdiv@sign 002C  
-    ___wmul@multiplicand 0022                      l220 049C                      l213 045B  
-                    l214 0460                      l223 04A2                      l217 0496  
-                    l226 0495                      l325 042A                      l351 0477  
-                    l327 0442                      l197 041B                      l478 03D2  
-                    u700 0476                      u701 0475                      u710 0371  
-                    u630 044F                      u711 0370                      u631 044E  
-                    u800 03C9                      u720 037C                      u640 049C  
-                    u801 03C8                      u721 037B                      u641 049B  
-                    u730 038D                      u650 0424                      u731 038C  
-                    u651 0423                      u750 039F                      u830 0051  
-                    u751 039E                      u831 0050                      u680 043E  
-                    u840 0066                      u745 0391                      u681 043D  
-                    u665 042B                      u841 0065                      u770 03B0  
-                    u690 0469                      u850 0095                      u771 03AF  
-                    u691 0468                      u675 0432                      u851 0094  
-                    u860 01F4                      u765 03A0                      u861 01F3  
-                    u790 03C4                      u791 03C3                      u775 03AC  
-                    u785 03B8                      _POT 0047                      _isr 01FF  
-                   l1301 03EE                     l1311 03FB                     l1303 03EF  
-                   l1401 03B0                     l1321 0404                     l1313 03FE  
-                   l1305 03F2                     l1411 03C9                     l1403 03B6  
-                   l1331 040C                     l1323 0405                     l1315 03FF  
-                   l1307 03F3                     l1413 03CE                     l1405 03B7  
-                   l1333 040F                     l1325 0406                     l1317 0400  
-                   l1309 03FA                     l1341 0492                     l1407 03BE  
-                   l1351 0431                     l1271 0455                     l1335 0412  
-                   l1327 0407                     l1319 0403                     l1431 0030  
-                   l1409 03C4                     l1361 0465                     l1353 0438  
-                   l1345 041C                     l1273 045A                     l1265 0446  
-                   l1329 0408                     l1281 03E1                     l1337 04A0  
-                   l1441 0051                     l1433 0035                     l1363 0469  
-                   l1355 043E                     l1347 0420                     l1267 044F  
-                   l1291 03E9                     l1283 03E3                     l1275 0496  
-                   l1339 048D                     l1451 0072                     l1443 005B  
-                   l1435 0038                     l1381 0378                     l1373 036A  
-                   l1365 046D                     l1349 0424                     l1269 0453  
-                   l1293 03EA                     l1285 03E4                     l1277 03D3  
-                   l1461 0096                     l1453 007C                     l1445 0060  
-                   l1437 0042                     l1391 038D                     l1383 037C  
-                   l1375 036D                     l1367 046F                     l1359 0464  
-                   l1295 03EB                     l1287 03E5                     l1279 03D9  
-                   l1471 0145                     l1463 0099                     l1455 007F  
-                   l1447 0066                     l1439 004A                     l1393 0390  
-                   l1385 0381                     l1377 0371                     l1369 0476  
-                   l1297 03EC                     l1289 03E8                     l1481 01F4  
-                   l1473 015B                     l1465 00B0                     l1457 008D  
-                   l1449 0070                     l1395 0397                     l1387 0385  
-                   l1379 0376                     l1299 03ED                     l1483 01F7  
-                   l1475 019A                     l1467 00EF                     l1459 0095  
-                   l1397 039B                     l1389 0387                     l1477 01AD  
-                   l1469 0102                     l1399 039F                     l1479 01F0  
-                   ?_isr 0070                     u1157 003E                     u1167 0078  
-                   u1177 0087                     _POT1 0045                     _POT2 0044  
-                   _TMR0 0001                     _TXIE 0464                     _TXIF 0064  
-                   _flag 007A                     _cont 0042                     _main 0030  
+    ___wmul@multiplicand 0022                      l200 049C                      l203 04A2  
+                    l206 0495                      l305 042A                      l331 0477  
+                    l307 0442                      l193 045B                      l177 041B  
+                    l194 0460                      l197 0496                      l458 03D2  
+                    u600 0476                      u601 0475                      u610 0371  
+                    u530 044F                      u611 0370                      u531 044E  
+                    u700 03C9                      u620 037C                      u540 049C  
+                    u701 03C8                      u621 037B                      u541 049B  
+                    u630 038D                      u550 0424                      u631 038C  
+                    u551 0423                      u650 039F                      u730 0051  
+                    u651 039E                      u731 0050                      u580 043E  
+                    u740 0066                      u645 0391                      u581 043D  
+                    u565 042B                      u741 0065                      u670 03B0  
+                    u590 0469                      u750 0095                      u671 03AF  
+                    u591 0468                      u575 0432                      u751 0094  
+                    u760 01F4                      u665 03A0                      u761 01F3  
+                    u690 03C4                      u691 03C3                      u675 03AC  
+                    u685 03B8                      _isr 01FF                      _pot 0047  
+                   l1201 03D9                     l1211 03E8                     l1203 03E1  
+                   l1301 0376                     l1221 03ED                     l1213 03E9  
+                   l1205 03E3                     l1311 0387                     l1303 0378  
+                   l1231 03FA                     l1223 03EE                     l1215 03EA  
+                   l1207 03E4                     l1321 039F                     l1313 038D  
+                   l1305 037C                     l1241 0403                     l1233 03FB  
+                   l1225 03EF                     l1217 03EB                     l1209 03E5  
+                   l1401 01F0                     l1323 03B0                     l1315 0390  
+                   l1331 03C4                     l1307 0381                     l1251 0408  
+                   l1243 0404                     l1235 03FE                     l1227 03F2  
+                   l1219 03EC                     l1403 01F4                     l1333 03C9  
+                   l1325 03B6                     l1317 0397                     l1309 0385  
+                   l1253 040C                     l1245 0405                     l1237 03FF  
+                   l1229 03F3                     l1261 048D                     l1405 01F7  
+                   l1335 03CE                     l1327 03B7                     l1319 039B  
+                   l1271 0424                     l1191 0453                     l1255 040F  
+                   l1247 0406                     l1239 0400                     l1263 0492  
+                   l1329 03BE                     l1281 0464                     l1273 0431  
+                   l1193 0455                     l1257 0412                     l1249 0407  
+                   l1361 004A                     l1353 0030                     l1291 0476  
+                   l1283 0465                     l1275 0438                     l1267 041C  
+                   l1195 045A                     l1187 0446                     l1259 04A0  
+                   l1371 0070                     l1363 0051                     l1355 0035  
+                   l1285 0469                     l1277 043E                     l1269 0420  
+                   l1189 044F                     l1197 0496                     l1381 0095  
+                   l1373 0072                     l1365 005B                     l1357 0038  
+                   l1295 036A                     l1287 046D                     l1199 03D3  
+                   l1391 0102                     l1383 0096                     l1375 007C  
+                   l1367 0060                     l1359 0042                     l1297 036D  
+                   l1289 046F                     l1393 0145                     l1385 0099  
+                   l1377 007F                     l1369 0066                     l1299 0371  
+                   l1395 015B                     l1387 00B0                     l1379 008D  
+                   l1397 019A                     l1389 00EF                     l1399 01AD  
+                   ?_isr 0070                     u1057 003E                     u1067 0078  
+                   u1077 0087                     _TMR0 0001                     _TXIE 0464  
+                   _TXIF 0064                     _flag 007A                     _cont 003F  
+                   _main 0030                     _pot1 0045                     _pot2 0044  
                    btemp 007E                     start 000C        ___bmul@multiplier 0023  
                   ??_isr 0074                    ?_main 0070          __end_of___awdiv 03D3  
-                  _ANSEL 0188          ___awdiv@divisor 0026                    i1l141 028D  
-                  i1l127 02DD                    i1l172 0363                    i1l166 0362  
-                  i1l351 048C          ___awdiv@counter 002B                    _RCREG 001A  
+                  _ANSEL 0188          ___awdiv@divisor 0026                    i1l143 028D  
+                  i1l129 02DD                    i1l331 048C                    i1l174 0363  
+                  i1l168 0362          ___awdiv@counter 002B                    _RCREG 001A  
                   _SPBRG 0099                    _PORTA 0005                    _PORTB 0006  
                   _PORTC 0007                    _PORTD 0008                    _PORTE 0009  
-                  u81_20 047E                    u81_21 047D                    _TRISA 0085  
+                  u71_20 047E                    u71_21 047D                    u72_20 048B  
+                  u80_20 0220                    u72_21 048A                    u80_21 021F  
+                  u81_20 022A                    u81_21 0229                    _TRISA 0085  
                   _TRISB 0086                    _TRISC 0087                    _TRISD 0088  
-                  _TRISE 0089                    u82_20 048B                    u90_20 0220  
-                  u82_21 048A                    u90_21 021F                    u91_20 022A  
-                  u91_21 0229                    u92_20 0232                    u92_21 0231  
-                  u93_20 023B                    u93_21 023A                    u94_20 0246  
-                  u94_21 0245                    u95_20 0251                    u87_20 0203  
-                  u95_21 0250                    u87_21 0202                    u96_20 025C  
-                  u88_20 0210                    u96_21 025B                    u88_21 020F  
-                  u97_20 0267                    u89_20 0216                    u97_21 0266  
-                  u89_21 0215                    _TXREG 0019                    u98_20 0272  
-                  u98_21 0271                    u99_20 027D                    u99_21 027C  
-                  _setup 03D3         __end_ofi1___bmul 048D                    pclath 000A  
-        __end_of_spiInit 0461          __end_of_spiRead 0496                    status 0003  
-                  wtemp0 007E          __initialization 000F             __end_of_main 01FF  
-                 ??_main 002F         ___awdiv@dividend 0028                   ?_setup 0070  
-                 _ANSELH 0189                   u100_20 0288                   u100_21 0287  
-                 u101_20 0292                   u101_21 0291                   u110_20 0327  
-                 u102_20 02A3                   u110_21 0326                   u102_21 02A2  
-                 u111_20 0335                   u103_20 02C0                   u111_21 0334  
-                 u103_21 02BF                   i1l1421 047E                   i1l1501 0224  
-                 i1l1423 0482                   i1l1511 023B                   i1l1503 022A  
-                 u112_20 0342                   u104_20 02E1                   i1l1425 0484  
-                 i1l1417 0479                   u112_21 0341                   i1l1601 032F  
-                 u104_21 02E0                   i1l1521 0256                   i1l1513 0240  
-                 i1l1505 022C                   i1l1427 048B                   i1l1419 047A  
-                 i1l1611 034A                   i1l1603 0335                   i1l1531 0272  
-                 i1l1523 025C                   i1l1515 0246                   i1l1507 0232  
-                 i1l1621 0360                   i1l1613 0350                   i1l1605 033C  
-                 i1l1533 0277                   i1l1525 0261                   i1l1517 024B  
-                 i1l1509 0235                   i1l1541 028D                   i1l1615 0353  
-                 i1l1607 0342                   i1l1623 0362                   i1l1551 02A3  
-                 i1l1543 0292                   i1l1535 027D                   i1l1527 0267  
-                 i1l1519 0251                   u113_20 0350                   u105_20 02E6  
-                 i1l1617 0358                   u113_21 034F                   i1l1609 0345  
-                 u105_21 02E5                   i1l1561 02C0                   i1l1553 02B3  
-                 i1l1545 029A                   i1l1537 0282                   i1l1529 026C  
-                 i1l1619 035E                   i1l1571 02E6                   i1l1555 02B7  
-                 i1l1547 029B                   i1l1539 0288                   i1l1491 020A  
-                 i1l1581 02FE                   i1l1573 02E9                   i1l1557 02B8  
-                 i1l1549 029E                   i1l1493 0210                   i1l1485 01FF  
-                 i1l1591 0314                   i1l1583 0301                   i1l1575 02EC  
-                 i1l1559 02BB                   i1l1495 0216                   i1l1567 02DD  
-                 i1l1487 0203                   u114_20 035E                   u106_20 02F1  
-                 u114_21 035D                   i1l1593 031A                   i1l1585 0306  
-                 i1l1577 02F1                   u106_21 02F0                   i1l1569 02E1  
-                 i1l1497 021A                   i1l1489 0209                   i1l1595 0321  
-                 i1l1587 030C                   i1l1579 02F8                   i1l1499 0220  
-                 i1l1597 0327                   i1l1589 030F                   i1l1599 032A  
-                 u107_20 02FE                   u107_21 02FD                   u108_20 030C  
-                 u108_21 030B                   u109_20 031A                   u109_21 0319  
+                  _TRISE 0089                    u90_20 0288                    u82_20 0232  
+                  u90_21 0287                    u82_21 0231                    u91_20 0292  
+                  u83_20 023B                    u91_21 0291                    u83_21 023A  
+                  u92_20 02A3                    u84_20 0246                    u92_21 02A2  
+                  u84_21 0245                    u93_20 02C0                    u85_20 0251  
+                  u77_20 0203                    u93_21 02BF                    u85_21 0250  
+                  u77_21 0202                    u94_20 02E1                    u86_20 025C  
+                  u78_20 0210                    u94_21 02E0                    u86_21 025B  
+                  u78_21 020F                    u95_20 02E6                    u87_20 0267  
+                  u79_20 0216                    u95_21 02E5                    u87_21 0266  
+                  u79_21 0215                    u96_20 02F1                    u88_20 0272  
+                  u96_21 02F0                    u88_21 0271                    u97_20 02FE  
+                  u89_20 027D                    u97_21 02FD                    u89_21 027C  
+                  _TXREG 0019                    u98_20 030C                    u98_21 030B  
+                  u99_20 031A                    u99_21 0319                    _setup 03D3  
+       __end_ofi1___bmul 048D                    pclath 000A          __end_of_spiInit 0461  
+        __end_of_spiRead 0496                    status 0003                    wtemp0 007E  
+        __initialization 000F             __end_of_main 01FF                   ??_main 002F  
+       ___awdiv@dividend 0028                   ?_setup 0070                   _ANSELH 0189  
+                 u100_20 0327                   u100_21 0326                   u101_20 0335  
+                 u101_21 0334                   u102_20 0342                   u102_21 0341  
+                 u103_20 0350                   u103_21 034F                   i1l1411 0209  
+                 i1l1341 047A                   i1l1501 02F8                   i1l1421 0220  
+                 i1l1413 020A                   i1l1343 047E                   i1l1511 030F  
+                 i1l1503 02FE                   i1l1431 0235                   i1l1423 0224  
+                 i1l1415 0210                   i1l1407 01FF                   u104_20 035E  
+                 i1l1345 0482                   u104_21 035D                   i1l1521 032A  
+                 i1l1513 0314                   i1l1505 0301                   i1l1441 0251  
+                 i1l1433 023B                   i1l1425 022A                   i1l1417 0216  
+                 i1l1409 0203                   i1l1347 0484                   i1l1339 0479  
+                 i1l1531 0345                   i1l1523 032F                   i1l1515 031A  
+                 i1l1507 0306                   i1l1451 026C                   i1l1443 0256  
+                 i1l1435 0240                   i1l1427 022C                   i1l1419 021A  
+                 i1l1349 048B                   i1l1541 035E                   i1l1533 034A  
+                 i1l1525 0335                   i1l1517 0321                   i1l1509 030C  
+                 i1l1461 0288                   i1l1453 0272                   i1l1445 025C  
+                 i1l1437 0246                   i1l1429 0232                   i1l1543 0360  
+                 i1l1535 0350                   i1l1527 033C                   i1l1519 0327  
+                 i1l1471 029E                   i1l1455 0277                   i1l1447 0261  
+                 i1l1439 024B                   i1l1463 028D                   i1l1537 0353  
+                 i1l1529 0342                   i1l1545 0362                   i1l1473 02A3  
+                 i1l1481 02BB                   i1l1465 0292                   i1l1457 027D  
+                 i1l1449 0267                   i1l1539 0358                   i1l1491 02E1  
+                 i1l1483 02C0                   i1l1475 02B3                   i1l1467 029A  
+                 i1l1459 0282                   i1l1493 02E6                   i1l1477 02B7  
+                 i1l1469 029B                   i1l1495 02E9                   i1l1479 02B8  
+                 i1l1497 02EC                   i1l1489 02DD                   i1l1499 02F1  
                  _SPBRGH 009A                   _TRISC2 043A                   _TRISC3 043B  
                  _TRISC5 043D                   _SSPCON 0014                   _SSPBUF 0013  
-                 ___bmul 0461                   _c_flag 0040                   _d_flag 0041  
-                 ___wmul 041C                ??___awdiv 002A                   _decena 003F  
-                 _u_flag 0046         ___awdiv@quotient 002D                   _unidad 007B  
-                 saved_w 007E         __end_of_spiWrite 04A3                ??_spiInit 0023  
-              ??_spiRead 0020  __end_of__initialization 002C      ___bmul@multiplicand 0020  
-         __pcstackCOMMON 0070             __pidataBANK0 04A3            __end_of_setup 041C  
-              ?i1___bmul 0070           _OPTION_REGbits 0081         i1___bmul@product 0072  
-                ??_setup 0024               __pbssBANK0 0039               __pmaintext 0030  
-   _display_decimal_2_s2 0039       _display_decimal_s2 003A                  ?___bmul 0020  
-                ?___wmul 0020               __pintentry 0004  __size_of_spiReceiveWait 0007  
-             ??i1___bmul 0071                  _SSPSTAT 0094                ?_spiWrite 0070  
+                 ___bmul 0461                   _c_flag 0042                   _d_flag 0043  
+                 ___wmul 041C                ??___awdiv 002A                   _decena 0041  
+       _disp__decimal_u2 003A                   _u_flag 0046         ___awdiv@quotient 002D  
+                 _unidad 007C                   saved_w 007E         __end_of_spiWrite 04A3  
+              ??_spiInit 0023                ??_spiRead 0020  __end_of__initialization 002C  
+    ___bmul@multiplicand 0020           __pcstackCOMMON 0070             __pidataBANK0 04A3  
+          __end_of_setup 041C                ?i1___bmul 0070           _OPTION_REGbits 0081  
+       i1___bmul@product 0072                  ??_setup 0024               __pbssBANK0 0039  
+             __pmaintext 0030                  ?___bmul 0020                  ?___wmul 0020  
+             __pintentry 0004  __size_of_spiReceiveWait 0007               ??i1___bmul 0071  
+                _SSPSTAT 0094                  _RC_temp 007D                ?_spiWrite 0070  
         __size_of___bmul 0017                  ___awdiv 036A          __size_of___wmul 0027  
-                __ptext1 049D                  __ptext2 048D                  __ptext3 0496  
-                __ptext4 03D3                  __ptext5 0443                  __ptext6 041C  
-                __ptext7 0461                  __ptext8 036A                  __ptext9 01FF  
-           __size_of_isr 016B      i1___bmul@multiplier 0073                  _spiInit 0443  
-                _spiRead 048D     end_of_initialization 002C                _RCSTAbits 0018  
-             ??_spiWrite 0020                _PORTCbits 0007                _PORTDbits 0008  
-            spiWrite@dat 0020                _TXSTAbits 0098           _spiReceiveWait 0496  
-         __end_of___bmul 0478           __end_of___wmul 0443              _BAUDCTLbits 0187  
-      __size_ofi1___bmul 0015      start_initialization 000F              __end_of_isr 036A  
- __end_of_spiReceiveWait 049D                 ??___bmul 0021                 ??___wmul 0024  
+      _disp__decimal2_u2 0039                  __ptext1 049D                  __ptext2 048D  
+                __ptext3 0496                  __ptext4 03D3                  __ptext5 0443  
+                __ptext6 041C                  __ptext7 0461                  __ptext8 036A  
+                __ptext9 01FF             __size_of_isr 016B      i1___bmul@multiplier 0073  
+                _spiInit 0443                  _spiRead 048D     end_of_initialization 002C  
+           _disp__unidad 003E                _RCSTAbits 0018               ??_spiWrite 0020  
+              _PORTAbits 0005                _PORTCbits 0007              spiWrite@dat 0020  
+              _TXSTAbits 0098           _spiReceiveWait 0496           __end_of___bmul 0478  
+         __end_of___wmul 0443              _BAUDCTLbits 0187        __size_ofi1___bmul 0015  
+    start_initialization 000F              __end_of_isr 036A   __end_of_spiReceiveWait 049D  
+               ??___bmul 0021          _disp__decimal_2 003C                 ??___wmul 0024  
             __pdataBANK0 0046              __pbssCOMMON 007A                ___latbits 0002  
-          __pcstackBANK0 0020                _main$1215 0037        _display_decimal_2 003C  
-        ?_spiReceiveWait 0070                 ?___awdiv 0026        __size_of_spiWrite 0006  
-              _cont_temp 007C                 ?_spiInit 0020                 ?_spiRead 0070  
+          __pcstackBANK0 0020                _main$1211 0037          ?_spiReceiveWait 0070  
+               ?___awdiv 0026        __size_of_spiWrite 0006                _cont_temp 007B  
+        _disp__unidad_u2 003B                 ?_spiInit 0020                 ?_spiRead 0070  
          __size_of_setup 0049     spiInit@sTransmitEdge 0022        interrupt_function 0004  
          ___wmul@product 0024    i1___bmul@multiplicand 0070       spiInit@sDataSample 0020  
                _PIR1bits 000C                 i1___bmul 0478        ___wmul@multiplier 0020  
-      _display_unidad_s2 003B         __size_of___awdiv 0069                 __ptext10 0478  
-       __size_of_spiInit 001E         __size_of_spiRead 0009                 _contador 0043  
-          __size_of_main 01CF                 _var_temp 007D                 _spiWrite 049D  
-           spiInit@sType 0023        spiInit@sClockIdle 0021               _INTCONbits 000B  
-               intlevel1 0000          _display_decimal 003D         ??_spiReceiveWait 0020  
-             _OSCCONbits 008F           _display_unidad 003E  
+       __size_of___awdiv 0069                 __ptext10 0478         __size_of_spiInit 001E  
+       __size_of_spiRead 0009                 _contador 0040            __size_of_main 01CF  
+               _spiWrite 049D             spiInit@sType 0023        spiInit@sClockIdle 0021  
+             _INTCONbits 000B            _disp__decimal 003D                 intlevel1 0000  
+       ??_spiReceiveWait 0020               _OSCCONbits 008F  

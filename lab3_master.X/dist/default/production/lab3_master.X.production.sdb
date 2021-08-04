@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 16F887 ]
 [d frameptr 0 ]
-"311 C:\Users\brand\Downloads\UVG\SEXTO SEMESTRE\DIGITAL 2\Labs\Lab 3\lab03\lab3_master.X\lab3_main.c
+"293 C:\Users\brand\Downloads\UVG\SEXTO SEMESTRE\DIGITAL 2\Labs\Lab 3\lab03\lab3_master.X\lab3_main.c
 [e E1292 . `uc
 SPI_MASTER_OSC_DIV4 32
 SPI_MASTER_OSC_DIV16 33
@@ -60,11 +60,11 @@ SPI_ACTIVE_2_IDLE 64
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"92 C:\Users\brand\Downloads\UVG\SEXTO SEMESTRE\DIGITAL 2\Labs\Lab 3\lab03\lab3_master.X\lab3_main.c
+"93 C:\Users\brand\Downloads\UVG\SEXTO SEMESTRE\DIGITAL 2\Labs\Lab 3\lab03\lab3_master.X\lab3_main.c
 [v _main main `(v  1 e 1 0 ]
-"141
+"142
 [v _isr isr `II(v  1 e 1 0 ]
-"258
+"240
 [v _setup setup `(v  1 e 1 0 ]
 "12 C:\Users\brand\Downloads\UVG\SEXTO SEMESTRE\DIGITAL 2\Labs\Lab 3\lab03\lab3_master.X\SPI.c
 [v _spiInit spiInit `(v  1 e 1 0 ]
@@ -78,6 +78,18 @@ SPI_ACTIVE_2_IDLE 64
 [v _TMR0 TMR0 `VEuc  1 e 1 @1 ]
 "166
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
+[s S63 . 1 `uc 1 RA0 1 0 :1:0 
+`uc 1 RA1 1 0 :1:1 
+`uc 1 RA2 1 0 :1:2 
+`uc 1 RA3 1 0 :1:3 
+`uc 1 RA4 1 0 :1:4 
+`uc 1 RA5 1 0 :1:5 
+`uc 1 RA6 1 0 :1:6 
+`uc 1 RA7 1 0 :1:7 
+]
+"183
+[u S72 . 1 `S63 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES72  1 e 1 @5 ]
 "228
 [v _PORTB PORTB `VEuc  1 e 1 @6 ]
 "290
@@ -96,18 +108,6 @@ SPI_ACTIVE_2_IDLE 64
 [v _PORTCbits PORTCbits `VES35  1 e 1 @7 ]
 "352
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
-[s S63 . 1 `uc 1 RD0 1 0 :1:0 
-`uc 1 RD1 1 0 :1:1 
-`uc 1 RD2 1 0 :1:2 
-`uc 1 RD3 1 0 :1:3 
-`uc 1 RD4 1 0 :1:4 
-`uc 1 RD5 1 0 :1:5 
-`uc 1 RD6 1 0 :1:6 
-`uc 1 RD7 1 0 :1:7 
-]
-"369
-[u S72 . 1 `S63 1 . 1 0 ]
-[v _PORTDbits PORTDbits `VES72  1 e 1 @8 ]
 "414
 [v _PORTE PORTE `VEuc  1 e 1 @9 ]
 [s S85 . 1 `uc 1 RBIF 1 0 :1:0 
@@ -208,7 +208,7 @@ SPI_ACTIVE_2_IDLE 64
 [v _OSCCONbits OSCCONbits `VES151  1 e 1 @143 ]
 "2177
 [v _SSPSTAT SSPSTAT `VEuc  1 e 1 @148 ]
-[s S457 . 1 `uc 1 BF 1 0 :1:0 
+[s S456 . 1 `uc 1 BF 1 0 :1:0 
 `uc 1 UA 1 0 :1:1 
 `uc 1 R_nW 1 0 :1:2 
 `uc 1 S 1 0 :1:3 
@@ -218,39 +218,39 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 SMP 1 0 :1:7 
 ]
 "2231
-[s S466 . 1 `uc 1 . 1 0 :2:0 
+[s S465 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D 1 0 :1:5 
 ]
-[s S471 . 1 `uc 1 . 1 0 :2:0 
+[s S470 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 I2C_READ 1 0 :1:2 
 `uc 1 I2C_START 1 0 :1:3 
 `uc 1 I2C_STOP 1 0 :1:4 
 `uc 1 I2C_DATA 1 0 :1:5 
 ]
-[s S477 . 1 `uc 1 . 1 0 :2:0 
+[s S476 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nW 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nA 1 0 :1:5 
 ]
-[s S482 . 1 `uc 1 . 1 0 :2:0 
+[s S481 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nWRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nADDRESS 1 0 :1:5 
 ]
-[s S487 . 1 `uc 1 . 1 0 :2:0 
+[s S486 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_W 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D_A 1 0 :1:5 
 ]
-[s S492 . 1 `uc 1 . 1 0 :2:0 
+[s S491 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 READ_WRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 DATA_ADDRESS 1 0 :1:5 
 ]
-[u S497 . 1 `S457 1 . 1 0 `S466 1 . 1 0 `S471 1 . 1 0 `S477 1 . 1 0 `S482 1 . 1 0 `S487 1 . 1 0 `S492 1 . 1 0 ]
-[v _SSPSTATbits SSPSTATbits `VES497  1 e 1 @148 ]
+[u S496 . 1 `S456 1 . 1 0 `S465 1 . 1 0 `S470 1 . 1 0 `S476 1 . 1 0 `S481 1 . 1 0 `S486 1 . 1 0 `S491 1 . 1 0 ]
+[v _SSPSTATbits SSPSTATbits `VES496  1 e 1 @148 ]
 [s S176 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
@@ -301,47 +301,47 @@ SPI_ACTIVE_2_IDLE 64
 "4544
 [v _TXIF TXIF `VEb  1 e 0 @100 ]
 "62 C:\Users\brand\Downloads\UVG\SEXTO SEMESTRE\DIGITAL 2\Labs\Lab 3\lab03\lab3_master.X\lab3_main.c
-[v _POT POT `uc  1 e 1 0 ]
+[v _pot pot `uc  1 e 1 0 ]
 "63
-[v _POT1 POT1 `uc  1 e 1 0 ]
+[v _pot1 pot1 `uc  1 e 1 0 ]
 "64
-[v _POT2 POT2 `uc  1 e 1 0 ]
-"65
-[v _var_temp var_temp `uc  1 e 1 0 ]
+[v _pot2 pot2 `uc  1 e 1 0 ]
 "67
-[v _contador contador `uc  1 e 1 0 ]
+[v _RC_temp RC_temp `uc  1 e 1 0 ]
 "68
-[v _cont_temp cont_temp `uc  1 e 1 0 ]
-"69
-[v _cont cont `uc  1 e 1 0 ]
-"71
 [v _u_flag u_flag `uc  1 e 1 0 ]
-"72
+"69
 [v _d_flag d_flag `uc  1 e 1 0 ]
-"73
+"70
 [v _c_flag c_flag `uc  1 e 1 0 ]
-"74
+"71
 [v _unidad unidad `uc  1 e 1 0 ]
-"75
+"72
 [v _decena decena `uc  1 e 1 0 ]
-"77
-[v _display_unidad display_unidad `uc  1 e 1 0 ]
+"74
+[v _contador contador `uc  1 e 1 0 ]
+"75
+[v _cont_temp cont_temp `uc  1 e 1 0 ]
+"76
+[v _cont cont `uc  1 e 1 0 ]
 "78
-[v _display_decimal display_decimal `uc  1 e 1 0 ]
+[v _disp__unidad disp__unidad `uc  1 e 1 0 ]
 "79
-[v _display_decimal_2 display_decimal_2 `uc  1 e 1 0 ]
+[v _disp__decimal disp__decimal `uc  1 e 1 0 ]
 "80
-[v _display_unidad_s2 display_unidad_s2 `uc  1 e 1 0 ]
+[v _disp__decimal_2 disp__decimal_2 `uc  1 e 1 0 ]
 "81
-[v _display_decimal_s2 display_decimal_s2 `uc  1 e 1 0 ]
+[v _disp__unidad_u2 disp__unidad_u2 `uc  1 e 1 0 ]
 "82
-[v _display_decimal_2_s2 display_decimal_2_s2 `uc  1 e 1 0 ]
+[v _disp__decimal_u2 disp__decimal_u2 `uc  1 e 1 0 ]
 "83
+[v _disp__decimal2_u2 disp__decimal2_u2 `uc  1 e 1 0 ]
+"84
 [v _flag flag `c  1 e 1 0 ]
-"92
+"93
 [v _main main `(v  1 e 1 0 ]
 {
-"136
+"137
 } 0
 "34 C:\Users\brand\Downloads\UVG\SEXTO SEMESTRE\DIGITAL 2\Labs\Lab 3\lab03\lab3_master.X\SPI.c
 [v _spiWrite spiWrite `(v  1 e 1 0 ]
@@ -362,10 +362,10 @@ SPI_ACTIVE_2_IDLE 64
 {
 "32
 } 0
-"258 C:\Users\brand\Downloads\UVG\SEXTO SEMESTRE\DIGITAL 2\Labs\Lab 3\lab03\lab3_master.X\lab3_main.c
+"240 C:\Users\brand\Downloads\UVG\SEXTO SEMESTRE\DIGITAL 2\Labs\Lab 3\lab03\lab3_master.X\lab3_main.c
 [v _setup setup `(v  1 e 1 0 ]
 {
-"313
+"295
 } 0
 "12 C:\Users\brand\Downloads\UVG\SEXTO SEMESTRE\DIGITAL 2\Labs\Lab 3\lab03\lab3_master.X\SPI.c
 [v _spiInit spiInit `(v  1 e 1 0 ]
@@ -415,10 +415,10 @@ SPI_ACTIVE_2_IDLE 64
 [v ___awdiv@dividend dividend `i  1 p 2 8 ]
 "41
 } 0
-"141 C:\Users\brand\Downloads\UVG\SEXTO SEMESTRE\DIGITAL 2\Labs\Lab 3\lab03\lab3_master.X\lab3_main.c
+"142 C:\Users\brand\Downloads\UVG\SEXTO SEMESTRE\DIGITAL 2\Labs\Lab 3\lab03\lab3_master.X\lab3_main.c
 [v _isr isr `II(v  1 e 1 0 ]
 {
-"229
+"234
 } 0
 "4 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8.c
 [v i1___bmul __bmul `(uc  1 e 1 0 ]
