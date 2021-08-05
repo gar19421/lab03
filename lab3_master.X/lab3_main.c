@@ -146,7 +146,7 @@ void __interrupt() isr(void){
     }
         
     if(PIR1bits.RCIF == 1){ //Empieza a recibir datos del USART
-        
+        //0x0A para el salto de linea \n
         if (RCREG ==  0x0D){
         PORTD = contador; 
         PORTA =2;

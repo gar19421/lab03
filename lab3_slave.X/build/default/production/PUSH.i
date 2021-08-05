@@ -1,4 +1,4 @@
-# 1 "lab3_slave_main.c"
+# 1 "PUSH.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,8 +6,14 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "lab3_slave_main.c" 2
-# 15 "lab3_slave_main.c"
+# 1 "PUSH.c" 2
+
+
+
+
+
+
+
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2488,7 +2494,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
-# 15 "lab3_slave_main.c" 2
+# 8 "PUSH.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
 # 13 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 3
@@ -2623,52 +2629,7 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 16 "lab3_slave_main.c" 2
-
-# 1 "./SPI.h" 1
-# 17 "./SPI.h"
-typedef enum
-{
-    SPI_MASTER_OSC_DIV4 = 0b00100000,
-    SPI_MASTER_OSC_DIV16 = 0b00100001,
-    SPI_MASTER_OSC_DIV64 = 0b00100010,
-    SPI_MASTER_TMR2 = 0b00100011,
-    SPI_SLAVE_SS_EN = 0b00100100,
-    SPI_SLAVE_SS_DIS = 0b00100101
-}Spi_Type;
-
-typedef enum
-{
-    SPI_DATA_SAMPLE_MIDDLE = 0b00000000,
-    SPI_DATA_SAMPLE_END = 0b10000000
-}Spi_Data_Sample;
-
-typedef enum
-{
-    SPI_CLOCK_IDLE_HIGH = 0b00010000,
-    SPI_CLOCK_IDLE_LOW = 0b00000000
-}Spi_Clock_Idle;
-
-typedef enum
-{
-    SPI_IDLE_2_ACTIVE = 0b00000000,
-    SPI_ACTIVE_2_IDLE = 0b01000000
-}Spi_Transmit_Edge;
-
-
-void spiInit(Spi_Type, Spi_Data_Sample, Spi_Clock_Idle, Spi_Transmit_Edge);
-void spiWrite(char);
-char spiRead(void);
-# 17 "lab3_slave_main.c" 2
-
-# 1 "./ADC.h" 1
-# 13 "./ADC.h"
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
-# 13 "./ADC.h" 2
-
-
-void ADC(void);
-# 18 "lab3_slave_main.c" 2
+# 9 "PUSH.c" 2
 
 # 1 "./PUSH.h" 1
 # 14 "./PUSH.h"
@@ -2677,155 +2638,23 @@ void ADC(void);
 
 
 void init_push(void);
-# 19 "lab3_slave_main.c" 2
-# 30 "lab3_slave_main.c"
-#pragma config FOSC = INTRC_NOCLKOUT
-
-
-#pragma config WDTE = OFF
-
-#pragma config PWRTE = ON
-#pragma config MCLRE = OFF
-
-
-#pragma config CP = OFF
-
-#pragma config CPD = OFF
-
-#pragma config BOREN = OFF
-#pragma config IESO = OFF
-
-#pragma config FCMEN = OFF
-
-#pragma config LVP = OFF
-
-
-
-#pragma config BOR4V = BOR40V
-
-#pragma config WRT = OFF
+# 10 "PUSH.c" 2
 
 
 
 
 
-uint8_t temp = 0;
-uint8_t pot_1;
-uint8_t pot_2;
-uint8_t flag;
 
 
+void init_push() {
 
+    OPTION_REGbits.nRBPU = 0 ;
+    WPUB = 0x03;
 
-void setup(void);
+    INTCONbits.RBIE = 1;
+    INTCONbits.RBIF = 0;
 
+    IOCB = 0x03;
 
-
-
-void __attribute__((picinterrupt(("")))) isr(void){
-
-   if(ADIF == 1){
-        if (flag == 1){
-            pot_1 = ADRESH;
-            ADCON0bits.CHS0 = 1;
-            flag = 0;
-        } else{
-            pot_2 = ADRESH;
-            ADCON0bits.CHS0 = 0;
-            flag = 1;
-        }
-
-        ADIF = 0;
-        _delay((unsigned long)((60)*(8000000/4000000.0)));
-        ADCON0bits.GO = 1;
-    }
-
-   if(SSPIF == 1){
-        temp = spiRead();
-        if(temp == 1){
-            spiWrite(pot_1);
-        }
-        else if(temp == 2){
-            spiWrite(pot_2);
-        }
-        SSPIF = 0;
-    }
-
-
-   if(INTCONbits.RBIF){
-
-        if (PORTBbits.RB0 == 0){
-
-        }else if (PORTBbits.RB1 == 0){
-
-        }
-
-        INTCONbits.RBIF = 0;
-
-    }
-}
-
-
-
-void main(void) {
-    setup();
-    while(1){
-
-    }
     return;
-}
-
-
-
-void setup(void){
-
-    OSCCONbits.IRCF2 = 1;
-    OSCCONbits.IRCF1 = 1;
-    OSCCONbits.IRCF0 = 1;
-    OSCCONbits.SCS = 1;
-
-
-    ANSELH = 0x00;
-    ANSEL = 0x03;
-
-    TRISA = 0x23;
-    TRISC = 0x18;
-    TRISD = 0x00;
-    TRISE = 0x00;
-    TRISB = 0x03;
-
-
-    PORTB = 0x03;
-    PORTA = 0x00;
-    PORTC = 0x00;
-    PORTD = 0x00;
-    PORTE = 0x00;
-
-
-    ADC();
-
-
-    init_push();
-
-
-    INTCONbits.GIE = 1;
-    INTCONbits.T0IE = 1;
-    INTCONbits.T0IF = 0;
-    INTCONbits.PEIE = 1;
-    PIR1bits.SSPIF = 0;
-    PIE1bits.SSPIE = 1;
-    TRISAbits.TRISA5 = 1;
-
-    PIE1bits.ADIE = 1;
-    PIR1bits.ADIF = 0;
-
-
-    OPTION_REGbits.T0CS = 0;
-    OPTION_REGbits.PSA = 0;
-    OPTION_REGbits.PS2 = 1;
-    OPTION_REGbits.PS1 = 1;
-    OPTION_REGbits.PS0 = 1;
-    TMR0 = 10;
-
-    spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 }

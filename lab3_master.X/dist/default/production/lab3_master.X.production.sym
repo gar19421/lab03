@@ -231,7 +231,7 @@ cstackCOMMON 70 7D COMMON 70 1
 cstackBANK0 20 48 BANK0 20 1
 %locals
 dist/default/production\lab3_master.X.production.o
-C:\Users\brand\AppData\Local\Temp\sepc.s
+C:\Users\brand\AppData\Local\Temp\sjn0.s
 848 11 0 CODE 0
 851 11 0 CODE 0
 928 11 0 CODE 0

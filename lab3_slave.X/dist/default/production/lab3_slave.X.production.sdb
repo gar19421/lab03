@@ -24,7 +24,7 @@ SPI_CLOCK_IDLE_LOW 0
 SPI_IDLE_2_ACTIVE 0
 SPI_ACTIVE_2_IDLE 64
 ]
-"156 C:\Users\brand\Downloads\UVG\SEXTO SEMESTRE\DIGITAL 2\Labs\Lab 3\lab3_slave.X\lab3_slave_main.c
+"178 C:\Users\brand\Downloads\UVG\SEXTO SEMESTRE\DIGITAL 2\Labs\Lab 3\lab3_slave.X\lab3_slave_main.c
 [e E1292 . `uc
 SPI_MASTER_OSC_DIV4 32
 SPI_MASTER_OSC_DIV16 33
@@ -55,12 +55,14 @@ SPI_ACTIVE_2_IDLE 64
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"72 C:\Users\brand\Downloads\UVG\SEXTO SEMESTRE\DIGITAL 2\Labs\Lab 3\lab3_slave.X\lab3_slave_main.c
+"73 C:\Users\brand\Downloads\UVG\SEXTO SEMESTRE\DIGITAL 2\Labs\Lab 3\lab3_slave.X\lab3_slave_main.c
 [v _isr isr `II(v  1 e 1 0 ]
-"104
+"118
 [v _main main `(v  1 e 1 0 ]
-"114
+"128
 [v _setup setup `(v  1 e 1 0 ]
+"17 C:\Users\brand\Downloads\UVG\SEXTO SEMESTRE\DIGITAL 2\Labs\Lab 3\lab3_slave.X\PUSH.c
+[v _init_push init_push `(v  1 e 1 0 ]
 "12 C:\Users\brand\Downloads\UVG\SEXTO SEMESTRE\DIGITAL 2\Labs\Lab 3\lab3_slave.X\SPI.c
 [v _spiInit spiInit `(v  1 e 1 0 ]
 "29
@@ -73,13 +75,27 @@ SPI_ACTIVE_2_IDLE 64
 [v _TMR0 TMR0 `VEuc  1 e 1 @1 ]
 "166
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
+"228
+[v _PORTB PORTB `VEuc  1 e 1 @6 ]
+[s S300 . 1 `uc 1 RB0 1 0 :1:0 
+`uc 1 RB1 1 0 :1:1 
+`uc 1 RB2 1 0 :1:2 
+`uc 1 RB3 1 0 :1:3 
+`uc 1 RB4 1 0 :1:4 
+`uc 1 RB5 1 0 :1:5 
+`uc 1 RB6 1 0 :1:6 
+`uc 1 RB7 1 0 :1:7 
+]
+"245
+[u S309 . 1 `S300 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES309  1 e 1 @6 ]
 "290
 [v _PORTC PORTC `VEuc  1 e 1 @7 ]
 "352
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
 "414
 [v _PORTE PORTE `VEuc  1 e 1 @9 ]
-[s S309 . 1 `uc 1 RBIF 1 0 :1:0 
+[s S268 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -89,14 +105,14 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 GIE 1 0 :1:7 
 ]
 "482
-[s S318 . 1 `uc 1 . 1 0 :2:0 
+[s S277 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 TMR0IE 1 0 :1:5 
 ]
-[u S323 . 1 `S309 1 . 1 0 `S318 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES323  1 e 1 @11 ]
-[s S341 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[u S282 . 1 `S268 1 . 1 0 `S277 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES282  1 e 1 @11 ]
+[s S368 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSPIF 1 0 :1:3 
@@ -105,8 +121,8 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 ADIF 1 0 :1:6 
 ]
 "553
-[u S349 . 1 `S341 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES349  1 e 1 @12 ]
+[u S376 . 1 `S368 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES376  1 e 1 @12 ]
 "843
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
 "850
@@ -136,7 +152,7 @@ SPI_ACTIVE_2_IDLE 64
 ]
 [u S57 . 1 `S37 1 . 1 0 `S42 1 . 1 0 `S51 1 . 1 0 `S54 1 . 1 0 ]
 [v _ADCON0bits ADCON0bits `VES57  1 e 1 @31 ]
-[s S400 . 1 `uc 1 PS 1 0 :3:0 
+[s S427 . 1 `uc 1 PS 1 0 :3:0 
 `uc 1 PSA 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
 `uc 1 T0CS 1 0 :1:5 
@@ -144,15 +160,15 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 nRBPU 1 0 :1:7 
 ]
 "1366
-[s S407 . 1 `uc 1 PS0 1 0 :1:0 
+[s S434 . 1 `uc 1 PS0 1 0 :1:0 
 `uc 1 PS1 1 0 :1:1 
 `uc 1 PS2 1 0 :1:2 
 ]
-[u S411 . 1 `S400 1 . 1 0 `S407 1 . 1 0 ]
-[v _OPTION_REGbits OPTION_REGbits `VES411  1 e 1 @129 ]
+[u S438 . 1 `S427 1 . 1 0 `S434 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES438  1 e 1 @129 ]
 "1416
 [v _TRISA TRISA `VEuc  1 e 1 @133 ]
-[s S379 . 1 `uc 1 TRISA0 1 0 :1:0 
+[s S406 . 1 `uc 1 TRISA0 1 0 :1:0 
 `uc 1 TRISA1 1 0 :1:1 
 `uc 1 TRISA2 1 0 :1:2 
 `uc 1 TRISA3 1 0 :1:3 
@@ -162,15 +178,17 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 TRISA7 1 0 :1:7 
 ]
 "1433
-[u S388 . 1 `S379 1 . 1 0 ]
-[v _TRISAbits TRISAbits `VES388  1 e 1 @133 ]
+[u S415 . 1 `S406 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES415  1 e 1 @133 ]
+"1478
+[v _TRISB TRISB `VEuc  1 e 1 @134 ]
 "1540
 [v _TRISC TRISC `VEuc  1 e 1 @135 ]
 "1602
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
 "1664
 [v _TRISE TRISE `VEuc  1 e 1 @137 ]
-[s S360 . 1 `uc 1 TMR1IE 1 0 :1:0 
+[s S387 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 CCP1IE 1 0 :1:2 
 `uc 1 SSPIE 1 0 :1:3 
@@ -179,22 +197,22 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 ADIE 1 0 :1:6 
 ]
 "1718
-[u S368 . 1 `S360 1 . 1 0 ]
-[v _PIE1bits PIE1bits `VES368  1 e 1 @140 ]
-[s S272 . 1 `uc 1 SCS 1 0 :1:0 
+[u S395 . 1 `S387 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES395  1 e 1 @140 ]
+[s S325 . 1 `uc 1 SCS 1 0 :1:0 
 `uc 1 LTS 1 0 :1:1 
 `uc 1 HTS 1 0 :1:2 
 `uc 1 OSTS 1 0 :1:3 
 `uc 1 IRCF 1 0 :3:4 
 ]
 "1882
-[s S278 . 1 `uc 1 . 1 0 :4:0 
+[s S331 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 IRCF0 1 0 :1:4 
 `uc 1 IRCF1 1 0 :1:5 
 `uc 1 IRCF2 1 0 :1:6 
 ]
-[u S283 . 1 `S272 1 . 1 0 `S278 1 . 1 0 ]
-[v _OSCCONbits OSCCONbits `VES283  1 e 1 @143 ]
+[u S336 . 1 `S325 1 . 1 0 `S331 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES336  1 e 1 @143 ]
 "2177
 [v _SSPSTAT SSPSTAT `VEuc  1 e 1 @148 ]
 [s S127 . 1 `uc 1 BF 1 0 :1:0 
@@ -240,6 +258,10 @@ SPI_ACTIVE_2_IDLE 64
 ]
 [u S167 . 1 `S127 1 . 1 0 `S136 1 . 1 0 `S141 1 . 1 0 `S147 1 . 1 0 `S152 1 . 1 0 `S157 1 . 1 0 `S162 1 . 1 0 ]
 [v _SSPSTATbits SSPSTATbits `VES167  1 e 1 @148 ]
+"2346
+[v _WPUB WPUB `VEuc  1 e 1 @149 ]
+"2416
+[v _IOCB IOCB `VEuc  1 e 1 @150 ]
 [s S22 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 VCFG0 1 0 :1:4 
 `uc 1 VCFG1 1 0 :1:5 
@@ -261,23 +283,23 @@ SPI_ACTIVE_2_IDLE 64
 [v _TRISC3 TRISC3 `VEb  1 e 0 @1083 ]
 "4463
 [v _TRISC5 TRISC5 `VEb  1 e 0 @1085 ]
-"59 C:\Users\brand\Downloads\UVG\SEXTO SEMESTRE\DIGITAL 2\Labs\Lab 3\lab3_slave.X\lab3_slave_main.c
-[v _temporal temporal `uc  1 e 1 0 ]
-"60
-[v _POT1 POT1 `uc  1 e 1 0 ]
+"60 C:\Users\brand\Downloads\UVG\SEXTO SEMESTRE\DIGITAL 2\Labs\Lab 3\lab3_slave.X\lab3_slave_main.c
+[v _temp temp `uc  1 e 1 0 ]
 "61
-[v _POT2 POT2 `uc  1 e 1 0 ]
+[v _pot_1 pot_1 `uc  1 e 1 0 ]
 "62
-[v _flag_1 flag_1 `uc  1 e 1 0 ]
-"104
+[v _pot_2 pot_2 `uc  1 e 1 0 ]
+"63
+[v _flag flag `uc  1 e 1 0 ]
+"118
 [v _main main `(v  1 e 1 0 ]
 {
-"110
+"124
 } 0
-"114
+"128
 [v _setup setup `(v  1 e 1 0 ]
 {
-"157
+"179
 } 0
 "12 C:\Users\brand\Downloads\UVG\SEXTO SEMESTRE\DIGITAL 2\Labs\Lab 3\lab3_slave.X\SPI.c
 [v _spiInit spiInit `(v  1 e 1 0 ]
@@ -291,15 +313,20 @@ SPI_ACTIVE_2_IDLE 64
 [v spiInit@sType sType `E1264  1 a 1 4 ]
 "27
 } 0
+"17 C:\Users\brand\Downloads\UVG\SEXTO SEMESTRE\DIGITAL 2\Labs\Lab 3\lab3_slave.X\PUSH.c
+[v _init_push init_push `(v  1 e 1 0 ]
+{
+"28
+} 0
 "16 C:\Users\brand\Downloads\UVG\SEXTO SEMESTRE\DIGITAL 2\Labs\Lab 3\lab3_slave.X\ADC.c
 [v _ADC ADC `(v  1 e 1 0 ]
 {
 "28
 } 0
-"72 C:\Users\brand\Downloads\UVG\SEXTO SEMESTRE\DIGITAL 2\Labs\Lab 3\lab3_slave.X\lab3_slave_main.c
+"73 C:\Users\brand\Downloads\UVG\SEXTO SEMESTRE\DIGITAL 2\Labs\Lab 3\lab3_slave.X\lab3_slave_main.c
 [v _isr isr `II(v  1 e 1 0 ]
 {
-"100
+"114
 } 0
 "34 C:\Users\brand\Downloads\UVG\SEXTO SEMESTRE\DIGITAL 2\Labs\Lab 3\lab3_slave.X\SPI.c
 [v _spiWrite spiWrite `(v  1 e 1 0 ]

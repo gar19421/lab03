@@ -32,7 +32,7 @@ idataBANK0 CODE 0 494 494 2 2
 dataBANK0 BANK0 1 47 47 2 1
 bssCOMMON COMMON 1 7B 7B 3 1
 config CONFIG 4 2007 2007 2 2
-$C:\Users\brand\AppData\Local\Temp\sepc.o
+$C:\Users\brand\AppData\Local\Temp\sjn0.o
 reset_vec CODE 0 0 0 3 2
 end_init CODE 0 E E 3 2
 config CONFIG 4 2007 2007 2 2
@@ -81,32 +81,32 @@ STRING 496-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\lab3_master.X.production.o
-11 cinit CODE >848:C:\Users\brand\AppData\Local\Temp\sepc.s
-11 cinit CODE >851:C:\Users\brand\AppData\Local\Temp\sepc.s
-11 cinit CODE >928:C:\Users\brand\AppData\Local\Temp\sepc.s
-16 cinit CODE >929:C:\Users\brand\AppData\Local\Temp\sepc.s
-17 cinit CODE >930:C:\Users\brand\AppData\Local\Temp\sepc.s
-1C cinit CODE >931:C:\Users\brand\AppData\Local\Temp\sepc.s
-1D cinit CODE >935:C:\Users\brand\AppData\Local\Temp\sepc.s
-1E cinit CODE >936:C:\Users\brand\AppData\Local\Temp\sepc.s
-1F cinit CODE >937:C:\Users\brand\AppData\Local\Temp\sepc.s
-20 cinit CODE >938:C:\Users\brand\AppData\Local\Temp\sepc.s
-21 cinit CODE >939:C:\Users\brand\AppData\Local\Temp\sepc.s
-22 cinit CODE >940:C:\Users\brand\AppData\Local\Temp\sepc.s
-23 cinit CODE >941:C:\Users\brand\AppData\Local\Temp\sepc.s
-24 cinit CODE >942:C:\Users\brand\AppData\Local\Temp\sepc.s
-25 cinit CODE >943:C:\Users\brand\AppData\Local\Temp\sepc.s
-26 cinit CODE >944:C:\Users\brand\AppData\Local\Temp\sepc.s
-27 cinit CODE >945:C:\Users\brand\AppData\Local\Temp\sepc.s
-28 cinit CODE >946:C:\Users\brand\AppData\Local\Temp\sepc.s
-29 cinit CODE >947:C:\Users\brand\AppData\Local\Temp\sepc.s
-2A cinit CODE >948:C:\Users\brand\AppData\Local\Temp\sepc.s
-2B cinit CODE >951:C:\Users\brand\AppData\Local\Temp\sepc.s
-2C cinit CODE >952:C:\Users\brand\AppData\Local\Temp\sepc.s
-2D cinit CODE >953:C:\Users\brand\AppData\Local\Temp\sepc.s
-2E cinit CODE >959:C:\Users\brand\AppData\Local\Temp\sepc.s
-2E cinit CODE >961:C:\Users\brand\AppData\Local\Temp\sepc.s
-2F cinit CODE >962:C:\Users\brand\AppData\Local\Temp\sepc.s
+11 cinit CODE >848:C:\Users\brand\AppData\Local\Temp\sjn0.s
+11 cinit CODE >851:C:\Users\brand\AppData\Local\Temp\sjn0.s
+11 cinit CODE >928:C:\Users\brand\AppData\Local\Temp\sjn0.s
+16 cinit CODE >929:C:\Users\brand\AppData\Local\Temp\sjn0.s
+17 cinit CODE >930:C:\Users\brand\AppData\Local\Temp\sjn0.s
+1C cinit CODE >931:C:\Users\brand\AppData\Local\Temp\sjn0.s
+1D cinit CODE >935:C:\Users\brand\AppData\Local\Temp\sjn0.s
+1E cinit CODE >936:C:\Users\brand\AppData\Local\Temp\sjn0.s
+1F cinit CODE >937:C:\Users\brand\AppData\Local\Temp\sjn0.s
+20 cinit CODE >938:C:\Users\brand\AppData\Local\Temp\sjn0.s
+21 cinit CODE >939:C:\Users\brand\AppData\Local\Temp\sjn0.s
+22 cinit CODE >940:C:\Users\brand\AppData\Local\Temp\sjn0.s
+23 cinit CODE >941:C:\Users\brand\AppData\Local\Temp\sjn0.s
+24 cinit CODE >942:C:\Users\brand\AppData\Local\Temp\sjn0.s
+25 cinit CODE >943:C:\Users\brand\AppData\Local\Temp\sjn0.s
+26 cinit CODE >944:C:\Users\brand\AppData\Local\Temp\sjn0.s
+27 cinit CODE >945:C:\Users\brand\AppData\Local\Temp\sjn0.s
+28 cinit CODE >946:C:\Users\brand\AppData\Local\Temp\sjn0.s
+29 cinit CODE >947:C:\Users\brand\AppData\Local\Temp\sjn0.s
+2A cinit CODE >948:C:\Users\brand\AppData\Local\Temp\sjn0.s
+2B cinit CODE >951:C:\Users\brand\AppData\Local\Temp\sjn0.s
+2C cinit CODE >952:C:\Users\brand\AppData\Local\Temp\sjn0.s
+2D cinit CODE >953:C:\Users\brand\AppData\Local\Temp\sjn0.s
+2E cinit CODE >959:C:\Users\brand\AppData\Local\Temp\sjn0.s
+2E cinit CODE >961:C:\Users\brand\AppData\Local\Temp\sjn0.s
+2F cinit CODE >962:C:\Users\brand\AppData\Local\Temp\sjn0.s
 4 intentry CODE >142:C:\Users\brand\Downloads\UVG\SEXTO SEMESTRE\DIGITAL 2\Labs\Lab 3\lab03\lab3_master.X\lab3_main.c
 469 text10 CODE >4:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8.c
 46A text10 CODE >6:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8.c
@@ -361,14 +361,14 @@ __Hstrings 0 0 ABS 0 strings -
 _TMR0 1 0 ABS 0 - dist/default/production\lab3_master.X.production.o
 _TXIE 464 0 ABS 0 - dist/default/production\lab3_master.X.production.o
 _TXIF 64 0 ABS 0 - dist/default/production\lab3_master.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\brand\AppData\Local\Temp\sepc.o
+___sp 0 0 STACK 2 stack C:\Users\brand\AppData\Local\Temp\sjn0.o
 _cont 3F 0 BANK0 1 bssBANK0 dist/default/production\lab3_master.X.production.o
 _flag 7B 0 COMMON 1 bssCOMMON dist/default/production\lab3_master.X.production.o
 _main 64 0 CODE 0 maintext dist/default/production\lab3_master.X.production.o
 _pot1 46 0 BANK0 1 bssBANK0 dist/default/production\lab3_master.X.production.o
 _pot2 45 0 BANK0 1 bssBANK0 dist/default/production\lab3_master.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\lab3_master.X.production.o
-start 1C 0 CODE 0 init C:\Users\brand\AppData\Local\Temp\sepc.o
+start 1C 0 CODE 0 init C:\Users\brand\AppData\Local\Temp\sjn0.o
 __size_of___awdiv 0 0 ABS 0 - dist/default/production\lab3_master.X.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production\lab3_master.X.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
@@ -377,12 +377,12 @@ _OPTION_REGbits 81 0 ABS 0 - dist/default/production\lab3_master.X.production.o
 __LidataBANK0 0 0 ABS 0 idataBANK0 -
 __Hpowerup 0 0 CODE 0 powerup -
 i1___bmul@multiplier 73 0 COMMON 1 cstackCOMMON dist/default/production\lab3_master.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\brand\AppData\Local\Temp\sepc.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\brand\AppData\Local\Temp\sepc.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\brand\AppData\Local\Temp\sepc.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\brand\AppData\Local\Temp\sepc.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\brand\AppData\Local\Temp\sepc.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\brand\AppData\Local\Temp\sepc.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\brand\AppData\Local\Temp\sjn0.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\brand\AppData\Local\Temp\sjn0.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\brand\AppData\Local\Temp\sjn0.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\brand\AppData\Local\Temp\sjn0.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\brand\AppData\Local\Temp\sjn0.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\brand\AppData\Local\Temp\sjn0.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 ___bmul@multiplicand 20 0 BANK0 1 cstackBANK0 dist/default/production\lab3_master.X.production.o
 _OSCCONbits 8F 0 ABS 0 - dist/default/production\lab3_master.X.production.o
@@ -402,8 +402,8 @@ __Lmaintext 0 0 ABS 0 maintext -
 ___bmul@multiplier 23 0 BANK0 1 cstackBANK0 dist/default/production\lab3_master.X.production.o
 ___awdiv@divisor 26 0 BANK0 1 cstackBANK0 dist/default/production\lab3_master.X.production.o
 __end_of___awdiv 788 0 CODE 0 text8 dist/default/production\lab3_master.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\brand\AppData\Local\Temp\sepc.o
-___stacklo 0 0 ABS 0 - C:\Users\brand\AppData\Local\Temp\sepc.o
+___stackhi 0 0 ABS 0 - C:\Users\brand\AppData\Local\Temp\sjn0.o
+___stacklo 0 0 ABS 0 - C:\Users\brand\AppData\Local\Temp\sjn0.o
 __size_ofi1___bmul 0 0 ABS 0 - dist/default/production\lab3_master.X.production.o
 _BAUDCTLbits 187 0 ABS 0 - dist/default/production\lab3_master.X.production.o
 __size_of_setup 0 0 ABS 0 - dist/default/production\lab3_master.X.production.o
@@ -420,7 +420,7 @@ _TRISC2 43A 0 ABS 0 - dist/default/production\lab3_master.X.production.o
 _TRISC3 43B 0 ABS 0 - dist/default/production\lab3_master.X.production.o
 _TRISC5 43D 0 ABS 0 - dist/default/production\lab3_master.X.production.o
 i1___bmul@product 72 0 COMMON 1 cstackCOMMON dist/default/production\lab3_master.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\brand\AppData\Local\Temp\sepc.o
+___int_sp 0 0 STACK 2 stack C:\Users\brand\AppData\Local\Temp\sjn0.o
 i1___bmul 8D2 0 CODE 0 text10 dist/default/production\lab3_master.X.production.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
@@ -478,7 +478,7 @@ _d_flag 43 0 BANK0 1 bssBANK0 dist/default/production\lab3_master.X.production.o
 _decena 41 0 BANK0 1 bssBANK0 dist/default/production\lab3_master.X.production.o
 __end_of_isr 6B6 0 CODE 0 text9 dist/default/production\lab3_master.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\brand\AppData\Local\Temp\sepc.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\brand\AppData\Local\Temp\sjn0.o
 __pdataBANK0 47 0 BANK0 1 dataBANK0 dist/default/production\lab3_master.X.production.o
 __size_of___bmul 0 0 ABS 0 - dist/default/production\lab3_master.X.production.o
 __size_of___wmul 0 0 ABS 0 - dist/default/production\lab3_master.X.production.o

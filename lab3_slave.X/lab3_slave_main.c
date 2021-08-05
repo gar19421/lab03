@@ -16,6 +16,7 @@
  #include <stdint.h>
  #include "SPI.h"
  #include "ADC.h"
+#include "PUSH.h"
 
 //------------------------------------------------------------------------------
 //                          Directivas del compilador
@@ -56,10 +57,10 @@
 //------------------------------------------------------------------------------
 //                          Variables
 //------------------------------------------------------------------------------
-uint8_t temporal = 0;
-uint8_t POT1; //Para ADC
-uint8_t POT2;
-uint8_t flag_1; //Bandera para el ADC
+uint8_t temp = 0;
+uint8_t pot_1; //Para ADC
+uint8_t pot_2;
+uint8_t flag; //Bandera para el ADC
 
 //------------------------------------------------------------------------------
 //                          Prototipos
@@ -72,14 +73,14 @@ void setup(void);  //Configuración
 void __interrupt() isr(void){
    
    if(ADIF == 1){
-        if (flag_1 == 1){ 
-            POT1 = ADRESH; //Se almacena el valor del primer potenciómetro
+        if (flag == 1){ 
+            pot_1 = ADRESH; //Se almacena el valor del primer potenciómetro
             ADCON0bits.CHS0 = 1;//Cambiar de canal
-            flag_1 = 0;
+            flag = 0;
         } else{
-            POT2 = ADRESH; //Se almacena el valor del segundo potenciómetro
+            pot_2 = ADRESH; //Se almacena el valor del segundo potenciómetro
             ADCON0bits.CHS0 = 0;//Cambiar de canal
-            flag_1 = 1;
+            flag = 1;
         }
         
         ADIF = 0; //Limpiar la bandera de ADC
@@ -88,14 +89,27 @@ void __interrupt() isr(void){
     }  
    
    if(SSPIF == 1){
-        temporal = spiRead();
-        if(temporal == 1){
-            spiWrite(POT1);
+        temp = spiRead();
+        if(temp == 1){
+            spiWrite(pot_1);
         }
-        else if(temporal == 2){
-            spiWrite(POT2);
+        else if(temp == 2){
+            spiWrite(pot_2);
         }
         SSPIF = 0;
+    }
+   
+   
+   if(INTCONbits.RBIF){
+        
+        if (PORTBbits.RB0 == 0){ // se realiza las acciones de contador
+            //PORTC++;
+        }else if (PORTBbits.RB1 == 0){
+            //PORTC--;
+        }
+
+        INTCONbits.RBIF = 0;
+       
     }
 }
 //------------------------------------------------------------------------------
@@ -126,7 +140,10 @@ void setup(void){
     TRISC = 0x18; //Para salida del display
     TRISD = 0x00; //Para transistores
     TRISE = 0x00; //Para led de alarma y potenciometro
+    TRISB = 0x03;
     
+ 
+    PORTB = 0x03;
     PORTA = 0x00; //Se limpian los puertos
     PORTC = 0x00;    
     PORTD = 0x00;
@@ -134,6 +151,9 @@ void setup(void){
     
     //Configurar ADC
     ADC();
+    
+    // Inicializar antirebote e interrupciones push
+    init_push();
     
    //Configurar la interrupcion
     INTCONbits.GIE = 1;  //Enable interrupciones globales
@@ -143,6 +163,7 @@ void setup(void){
     PIR1bits.SSPIF = 0;         // Borramos bandera interrupción MSSP
     PIE1bits.SSPIE = 1;         // Habilitamos interrupción MSSP
     TRISAbits.TRISA5 = 1;       // Slave Select
+    
     PIE1bits.ADIE = 1;   //Enable interrupción ADC
     PIR1bits.ADIF = 0;   //Se limpia bandera de interrupción ADC
         
@@ -153,5 +174,6 @@ void setup(void){
     OPTION_REGbits.PS1 = 1;
     OPTION_REGbits.PS0 = 1;
     TMR0 = 10;  //Se reinicia el TMR0
+    
     spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);  
 }
